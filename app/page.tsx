@@ -30,7 +30,7 @@ export default function HomePage() {
 
           {/* Right Side: About Me */}
           <div className="w-full md:w-80 lg:w-96 shrink-0 md:mt-32">
-            <h2 className="text-xl font-extralight tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
+            <h2 className="text-xl font-normal tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
               About Me
             </h2>
             <div className="space-y-4 text-sm md:text-base leading-relaxed text-foreground/80 font-light">
