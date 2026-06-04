@@ -22,7 +22,43 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Pham Nguyen Trong Tri | Portfolio",
-  description: "Ultra-minimalist portfolio of Pham Nguyen Trong Tri",
+  description: "Ultra-minimalist portfolio of Pham Nguyen Trong Tri. Fresher Developer specializing in Java, React, and Next.js.",
+  keywords: ["Pham Nguyen Trong Tri", "Portfolio", "Fresher Developer", "Java", "Spring Boot", "React", "Next.js", "Web Development", "Software Engineer"],
+  authors: [{ name: "Pham Nguyen Trong Tri" }],
+  creator: "Pham Nguyen Trong Tri",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://your-portfolio-url.com", // TODO: Replace with your actual domain
+    title: "Pham Nguyen Trong Tri | Portfolio",
+    description: "Ultra-minimalist portfolio of Pham Nguyen Trong Tri, a Fresher Developer.",
+    siteName: "Pham Nguyen Trong Tri Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Pham Nguyen Trong Tri - Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pham Nguyen Trong Tri | Portfolio",
+    description: "Ultra-minimalist portfolio of Pham Nguyen Trong Tri, a Fresher Developer.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
