@@ -64,14 +64,14 @@ export default function RootLayout({
           </div>
 
           {/* Top Left: Username */}
-          <div className="fixed top-6 left-3 md:top-12 md:left-12 z-50 pointer-events-none bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-2 py-1 md:p-0 rounded-md md:rounded-none border-none shadow-none">
+          <div className="fixed top-6 left-3 md:top-12 md:left-12 z-50 pointer-events-none bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-2 py-1 md:p-0 rounded-md md:rounded-none border-none shadow-none hidden md:block">
             <Link href="/" className="text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity pointer-events-auto">
               irrick
             </Link>
           </div>
 
           {/* Top Right: Theme Toggle */}
-          <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-1 md:p-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-lg md:shadow-none flex items-center justify-center">
+          <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-1 md:p-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-lg md:shadow-none hidden md:flex items-center justify-center">
             <ThemeToggle />
           </div>
 
@@ -92,7 +92,7 @@ export default function RootLayout({
           </div>
 
           {/* Bottom Left: Copyright */}
-          <div className="fixed bottom-8 right-8 md:bottom-12 md:right-12 z-50 text-[10px] text-muted-foreground tracking-widest uppercase">
+          <div className="fixed bottom-8 right-8 md:bottom-12 md:right-12 z-50 text-[10px] text-muted-foreground tracking-widest uppercase hidden md:block">
             © Pham Nguyen Trong Tri
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { id: "home", label: "HOME" },
@@ -84,6 +85,11 @@ export function Navigation() {
           </a>
         );
       })}
+      
+      {/* Theme Toggle (Mobile Only) */}
+      <div className="md:hidden border-l border-border/50 pl-4 ml-auto flex items-center justify-center">
+        <ThemeToggle />
+      </div>
     </nav>
   );
 }

@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="w-full flex flex-col pointer-events-auto">
       
       {/* SECTION: HOME */}
-      <section id="home" className="w-full min-h-screen flex items-center p-8 pt-40 md:pt-8 md:pl-40 lg:pl-56 relative z-10">
+      <section id="home" className="w-full min-h-screen flex items-center p-8 pt-40 md:pt-2 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-16 xl:gap-32 items-center md:items-start justify-between">
           
           {/* Left Side: Huge Name & Title */}
@@ -29,7 +29,7 @@ export default function HomePage() {
           </div>
 
           {/* Right Side: About Me */}
-          <div className="w-full md:w-80 lg:w-96 shrink-0 md:mt-32">
+          <div className="w-full md:w-80 lg:w-96 shrink-0 md:mt-110">
             <h2 className="text-xl font-normal tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
               About Me
             </h2>
@@ -46,7 +46,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: SKILL */}
-      <section id="skill" className="w-full min-h-screen flex items-center p-8 pt-40 md:pt-8 md:pl-40 lg:pl-56 relative z-10">
+      <section id="skill" className="w-full min-h-screen flex items-center p-8 pt-40 md:pt-8 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col mt-10 md:mt-20">
           <div className="mb-16">
             <h2 className="font-heading font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.1] tracking-tight uppercase mb-6">
@@ -103,7 +103,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: PROJECT */}
-      <section id="project" className="w-full relative z-10 px-8 md:pl-40 lg:pl-56">
+      <section id="project" className="w-full relative z-10 px-8 md:pl-28 lg:pl-40 xl:pl-56">
         <ProjectShowcase />
       </section>
 
