@@ -52,8 +52,15 @@ export function CircleCursor() {
     };
   }, [isHovering]);
 
-  // Don't render if it's a touch device
-  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouchDevice(true);
+    }
+  }, []);
+
+  if (isTouchDevice) {
     return null;
   }
 

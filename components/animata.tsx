@@ -173,7 +173,7 @@ export function SlideUpStagger({
       animate={isInView ? "visible" : "hidden"}
     >
       {Children.map(children, (childNode) => {
-        if (!isValidElement(childNode)) return childNode;
+        if (!isValidElement(childNode)) return null;
         return <motion.div variants={child}>{childNode}</motion.div>;
       })}
     </motion.div>
