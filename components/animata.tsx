@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { ReactNode, useRef, Children, isValidElement } from "react";
 
 // Blur Fade In (similar to Animata's standard fade)
@@ -87,7 +87,7 @@ export function TypingText({
 }) {
   const letters = text.split("");
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
@@ -95,7 +95,7 @@ export function TypingText({
     },
   };
 
-  const child = {
+  const child: Variants = {
     hidden: { opacity: 0, display: "none" },
     visible: {
       opacity: 1,
@@ -143,7 +143,7 @@ export function SlideUpStagger({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -151,7 +151,7 @@ export function SlideUpStagger({
     },
   };
 
-  const child = {
+  const child: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
