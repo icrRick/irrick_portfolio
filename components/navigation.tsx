@@ -61,7 +61,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed left-8 md:left-12 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-6 text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto">
+    <nav className="fixed top-10 left-1/2 -translate-x-1/2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 z-50 flex flex-row md:flex-col gap-8 md:gap-6 text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-6 py-4 md:px-0 md:py-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-xl md:shadow-none">
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
 

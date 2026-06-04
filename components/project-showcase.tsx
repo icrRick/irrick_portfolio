@@ -57,15 +57,15 @@ export function ProjectShowcase() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col md:flex-row relative gap-8 md:gap-0">
+    <div className="w-full flex flex-col-reverse md:flex-row relative gap-8 md:gap-0">
       
       {/* LEFT SIDE: Scrolling Projects */}
-      <div className="w-full md:w-[60%] flex flex-col">
+      <div className="w-full md:w-[60%] flex flex-col gap-10 md:gap-0">
         {projects.map((project, index) => (
           <div 
             key={project.id} 
             id={project.id}
-            className="w-full min-h-screen flex flex-col justify-center py-20"
+            className="w-full min-h-[50vh] md:min-h-screen flex flex-col justify-center py-4 md:py-20"
           >
             {/* Project Card Image Placeholder */}
             <div className="w-full aspect-[4/3] md:aspect-[16/10] bg-secondary/30 border border-border/50 relative overflow-hidden flex items-center justify-center group">
@@ -76,21 +76,21 @@ export function ProjectShowcase() {
             </div>
             
             {/* Project Details (Mobile mostly, since nav is sticky on desktop) */}
-            <div className="mt-8 md:hidden">
-              <h3 className="font-semibold text-2xl">{project.name}</h3>
-              <p className="text-muted-foreground font-light mt-2">{project.description}</p>
+            <div className="mt-6 md:hidden">
+              <h3 className="font-semibold text-xl">{project.name}</h3>
+              <p className="text-sm text-muted-foreground font-light mt-2">{project.description}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* RIGHT SIDE: Sticky Navigation */}
-      <div className="w-full md:w-[40%] md:sticky md:top-0 h-auto md:h-screen flex flex-col justify-center py-20 md:py-0 z-20 bg-background/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none md:pl-24">
-        <h2 className="text-xs font-semibold tracking-widest uppercase mb-12 text-foreground">
+      <div className="w-full md:w-[40%] md:sticky md:top-0 h-auto md:h-screen flex flex-col justify-center pt-10 md:pt-0 pb-0 md:py-0 z-20 md:pl-24">
+        <h2 className="text-xs font-semibold tracking-widest uppercase mb-2 md:mb-12 text-foreground">
           SELECTED PROJECTS
         </h2>
         
-        <div className="flex flex-col gap-4">
+        <div className="hidden md:flex flex-col gap-4">
           {projects.map((project, index) => {
             const isActive = index === activeIndex;
             return (
