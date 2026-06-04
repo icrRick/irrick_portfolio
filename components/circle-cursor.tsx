@@ -60,15 +60,15 @@ export function CircleCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block mix-blend-difference"
       style={{
         // Initial state before first mousemove
         transform: "translate3d(-100px, -100px, 0)"
       }}
     >
       <div 
-        className={`w-8 h-8 border border-foreground/50 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out ${
-          isHovering ? "scale-150 bg-foreground/[0.08]" : "scale-100 bg-transparent"
+        className={`w-8 h-8 border border-white rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out ${
+          isHovering ? "scale-150 bg-white/20" : "scale-100 bg-transparent"
         }`}
       />
     </div>
