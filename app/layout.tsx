@@ -71,7 +71,7 @@ export default function RootLayout({
           </div>
 
           {/* Top Right: Theme Toggle */}
-          <div className="fixed top-6 right-6 md:top-12 md:left-auto md:right-12 z-50 bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-1 md:p-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-lg md:shadow-none flex items-center justify-center">
+          <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-1 md:p-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-lg md:shadow-none flex items-center justify-center">
             <ThemeToggle />
           </div>
 
