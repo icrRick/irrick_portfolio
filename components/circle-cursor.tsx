@@ -34,8 +34,8 @@ export function CircleCursor() {
 
     const updatePosition = (e: MouseEvent) => {
       if (cursorRef.current) {
-        // Use translate3d for hardware-accelerated, zero-lag movement
-        cursorRef.current.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0) ${isHovering ? "scale(1.3)" : "scale(1)"}`;
+        // Use translate3d for hardware-accelerated, zero-lag movement. No scale here.
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
       }
     };
 
@@ -60,13 +60,17 @@ export function CircleCursor() {
   return (
     <div
       ref={cursorRef}
-      className={`fixed top-0 left-0 w-8 h-8 border border-foreground/50 rounded-full pointer-events-none z-[9999] hidden md:block transition-colors duration-150 ${
-        isHovering ? "bg-foreground/[0.08]" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
       style={{
         // Initial state before first mousemove
         transform: "translate3d(-100px, -100px, 0)"
       }}
-    />
+    >
+      <div 
+        className={`w-8 h-8 border border-foreground/50 rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out ${
+          isHovering ? "scale-150 bg-foreground/[0.08]" : "scale-100 bg-transparent"
+        }`}
+      />
+    </div>
   );
 }
