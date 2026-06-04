@@ -1,4 +1,5 @@
 import { ProjectShowcase } from "@/components/project-showcase";
+import { BlurFade, AnimatedLetters, TypingText, SlideUpStagger } from "@/components/animata";
 
 export default function HomePage() {
   return (
@@ -10,37 +11,37 @@ export default function HomePage() {
           
           {/* Left Side: Huge Name & Title */}
           <div className="flex flex-col flex-1 mt-10 md:mt-20">
-            <h1 className="font-heading font-extralight text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-[1.1] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit">
-              PHAM NGUYEN <br />
-              TRONG TRI
+            <h1 className="font-heading font-extralight text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-[1.1] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit flex flex-col">
+              <AnimatedLetters text="PHAM NGUYEN" />
+              <AnimatedLetters text="TRONG TRI" delay={0.55} />
             </h1>
-            <p className="mt-6 md:mt-8 text-lg md:text-xl font-light text-muted-foreground tracking-wide">
-              Fresher Developer
-            </p>
+            <div className="mt-6 md:mt-8 text-lg md:text-xl font-light text-muted-foreground tracking-wide h-[28px]">
+              <TypingText text="Fresher Developer" delay={1.2} />
+            </div>
 
-            <div className="mt-24 md:mt-40 xl:mt-60">
+            <BlurFade delay={1.4} className="mt-24 md:mt-40 xl:mt-60">
               <p className="text-sm text-muted-foreground">
                 For business inquiries, email me at <br />
                 <a href="mailto:trongtri.1975s@gmail.com" className="text-foreground hover:underline underline-offset-4 transition-all">
                   trongtri.1975s@gmail.com
                 </a>
               </p>
-            </div>
+            </BlurFade>
           </div>
 
           {/* Right Side: About Me */}
           <div className="w-full md:w-80 lg:w-96 shrink-0 md:mt-110">
-            <h2 className="text-xl font-normal tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
-              About Me
-            </h2>
-            <div className="space-y-4 text-sm md:text-base leading-relaxed text-foreground/80 font-light">
-              <p>
+            <SlideUpStagger delay={1.6}>
+              <h2 className="text-xl font-normal tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
+                About Me
+              </h2>
+              <p className="text-sm md:text-base leading-relaxed text-foreground/80 font-light mb-4">
                 I am currently a Fresher Developer based in Can Tho, Viet Nam.
               </p>
-              <p>
+              <p className="text-sm md:text-base leading-relaxed text-foreground/80 font-light">
                 My main focus is web development, and I have worked on several full-stack personal projects. I deeply love Java and writing Clean Code. I enjoy exploring new technologies and experimenting with creative ideas.
               </p>
-            </div>
+            </SlideUpStagger>
           </div>
         </div>
       </section>
@@ -48,16 +49,18 @@ export default function HomePage() {
       {/* SECTION: SKILL */}
       <section id="skill" className="w-full min-h-screen flex items-center p-8 pt-40 md:pt-8 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col mt-10 md:mt-20">
-          <div className="mb-16">
-            <h2 className="font-heading font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.1] tracking-tight uppercase mb-6">
-              MY SKILLS
-            </h2>
-            <div className="w-full h-[2px] bg-border/70"></div>
-          </div>
+          <BlurFade>
+            <div className="mb-16">
+              <h2 className="font-heading font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] leading-[1.1] tracking-tight uppercase mb-6">
+                MY SKILLS
+              </h2>
+              <div className="w-full h-[2px] bg-border/70"></div>
+            </div>
+          </BlurFade>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
             
             {/* BACKEND */}
-            <div>
+            <BlurFade delay={0.2}>
               <h3 className="text-2xl font-heading font-light tracking-wide uppercase mb-6 text-foreground/90">
                 BACKEND
               </h3>
@@ -68,10 +71,10 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
-            </div>
+            </BlurFade>
 
             {/* FRONTEND */}
-            <div>
+            <BlurFade delay={0.4}>
               <h3 className="text-2xl font-heading font-light tracking-wide uppercase mb-6 text-foreground/90">
                 FRONTEND
               </h3>
@@ -82,10 +85,10 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
-            </div>
+            </BlurFade>
 
             {/* DATABASES & OTHER */}
-            <div>
+            <BlurFade delay={0.6}>
               <h3 className="text-2xl font-heading font-light tracking-wide uppercase mb-6 text-foreground/90">
                 DB & OTHER
               </h3>
@@ -96,7 +99,7 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
-            </div>
+            </BlurFade>
 
           </div>
         </div>
