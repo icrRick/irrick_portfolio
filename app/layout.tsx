@@ -29,13 +29,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-portfolio-url.com", // TODO: Replace with your actual domain
+    url: "https://irrick-portfolio.vercel.app", // TODO: Replace with your actual domain
     title: "Pham Nguyen Trong Tri | Portfolio",
     description: "Ultra-minimalist portfolio of Pham Nguyen Trong Tri, a Fresher Developer.",
     siteName: "Pham Nguyen Trong Tri Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/preview_img.png",
         width: 1200,
         height: 630,
         alt: "Pham Nguyen Trong Tri - Portfolio",
