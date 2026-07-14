@@ -2,15 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
-
-const navItems = [
-  { id: "home", label: "HOME" },
-  { id: "skill", label: "SKILL" },
-  { id: "project", label: "PROJECT" },
-];
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage } from "@/lib/language-context";
+import { translations, t } from "@/lib/translations";
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
+  const { language } = useLanguage();
+
+  const navItems = [
+    { id: "home",    label: t(translations.nav.home,    language) },
+    { id: "skill",   label: t(translations.nav.skill,   language) },
+    { id: "project", label: t(translations.nav.project, language) },
+  ];
 
   useEffect(() => {
     const scrollContainer = document.querySelector('main');
@@ -86,8 +90,9 @@ export function Navigation() {
         );
       })}
       
-      {/* Theme Toggle (Mobile Only) */}
-      <div className="md:hidden border-l border-border/50 pl-4 ml-auto flex items-center justify-center">
+      {/* Theme Toggle + Language Toggle (Mobile Only) */}
+      <div className="md:hidden border-l border-border/50 pl-4 ml-auto flex items-center gap-2">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
     </nav>

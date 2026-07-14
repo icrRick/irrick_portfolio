@@ -3,6 +3,8 @@ import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
+import { LanguageProvider } from "@/lib/language-context";
 import { Navigation } from "@/components/navigation";
 import { GithubIcon, PhoneIcon, FacebookIcon } from "@/components/icons";
 import SplashCursor from "@/components/SplashCursor";
@@ -82,6 +84,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <LanguageProvider>
           <CircleCursor />
           {/* Background Animation */}
           <div className="fixed inset-0 z-0 pointer-events-none">
@@ -106,8 +109,9 @@ export default function RootLayout({
             </Link>
           </div>
 
-          {/* Top Right: Theme Toggle */}
-          <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none p-1 md:p-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-lg md:shadow-none hidden md:flex items-center justify-center">
+          {/* Top Right: Language + Theme Toggle */}
+          <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 hidden md:flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
           </div>
 
@@ -136,6 +140,7 @@ export default function RootLayout({
           <main className="flex-1 w-full h-full relative z-0 overflow-y-auto">
             {children}
           </main>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
