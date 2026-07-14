@@ -57,7 +57,7 @@ export const translations = {
 
     tuyensinh: {
       name:        { vi: "Landing Page Tuyển Sinh", en: "Enrollment Landing Page" },
-      role:        { vi: "Frontend Developer · Astro · TailwindCSS", en: "Frontend Developer · Astro · TailwindCSS" },
+      role:        { vi: "Frontend Developer · Next.js · TailwindCSS · ReactBits · Animata", en: "Frontend Developer · Next.js · TailwindCSS · ReactBits · Animata" },
       description: {
         vi: "Trang đích tuyển sinh được tối ưu chuyển đổi với form đăng ký thông minh, thông tin ngành học và các chỉ tiêu tuyển sinh. Thiết kế giao diện hiện đại, responsive và tối ưu SEO.",
         en: "Conversion-optimized enrollment landing page with smart registration form, program information and enrollment quotas. Modern, responsive design with SEO optimization.",
