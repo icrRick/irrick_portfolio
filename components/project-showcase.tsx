@@ -17,46 +17,51 @@ interface Project {
 const projects: Project[] = [
   {
     id: "proj-spidernews",
-    year: "6/2026",
+    year: "6/2026 – 7/2026",
     name: "SpiderNews",
-    role: "Fullstack Developer",
+    role: "Dự án cá nhân · Python · FastAPI · SQLAlchemy · Playwright · BeautifulSoup",
     description:
-      "Nền tảng tin tức tổng hợp tự động thu thập và phân loại bài viết từ nhiều nguồn, hỗ trợ đọc nhanh và tìm kiếm thông minh.",
+      "Hệ thống thu thập và xử lý tin tức tự động từ nhiều nguồn. Xây dựng REST API với FastAPI, tích hợp AI phục vụ nhận diện khuôn mặt, xử lý hình ảnh và phân tích dữ liệu. Sử dụng APScheduler để lên lịch thu thập tự động với SQLite/PostgreSQL.",
     images: ["/images/projects/SpiderNews/sn_1.png"],
+    link: "https://github.com/icrRick/SpiderNews_Demo",
   },
   {
     id: "proj-mekong",
-    year: "2/2026",
+    year: "1/2026 – 2/2026",
     name: "Mekong HighTech Summit",
-    role: "Frontend Developer",
+    role: "Dự án cá nhân · Astro · TailwindCSS",
     description:
-      "Website sự kiện hội nghị công nghệ cao khu vực Mekong với thiết kế hiện đại, lịch sự kiện tương tác và đăng ký trực tuyến.",
+      "Website đa ngôn ngữ cho sự kiện Mekong HighTech Summit. Thiết kế giao diện responsive tối ưu trên desktop và mobile. Xây dựng các chức năng hiển thị thông tin sự kiện, diễn giả, chương trình và đăng ký tham dự. Tối ưu hiệu năng tải trang và SEO.",
     images: [
       "/images/projects/MekongHighTech/mekong_1.png",
     ],
-  },
-  {
-    id: "proj-ebooks",
-    year: "5/2025",
-    name: "Nền tảng thương mại điện tử bán sách",
-    role: "Fullstack Developer",
-    description:
-      "Hệ thống e-commerce chuyên bán sách với tính năng tìm kiếm nâng cao, giỏ hàng, thanh toán trực tuyến và quản lý kho hàng.",
-    images: ["/images/projects/E_Books/book1.png"],
+    link: "https://mekong-hightech-summit-3.vercel.app/vi/",
   },
   {
     id: "proj-tuyensinh",
     year: "5/2026",
     name: "Landing Page Tuyển Sinh",
-    role: "Frontend Developer",
+    role: "Frontend Developer · Astro · TailwindCSS",
     description:
-      "Trang đích tuyển sinh được tối ưu chuyển đổi với form đăng ký thông minh, thông tin ngành học và các chỉ tiêu tuyển sinh.",
+      "Trang đích tuyển sinh được tối ưu chuyển đổi với form đăng ký thông minh, thông tin ngành học và các chỉ tiêu tuyển sinh. Thiết kế giao diện hiện đại, responsive và tối ưu SEO.",
     images: [
       "/images/projects/TuyenSinh/ts_1.png",
       "/images/projects/TuyenSinh/ts_2.png",
     ],
+    link: "https://demo-dnc.vercel.app/",
+  },
+  {
+    id: "proj-ebooks",
+    year: "1/2025 – 4/2025",
+    name: "Nền tảng Thương mại điện tử Sách",
+    role: "Team Leader · 6 thành viên · Java · Spring Boot · ReactJS · MySQL",
+    description:
+      "Hệ thống e-commerce cho phép mua/bán sách, tích hợp xác minh người bán (eKYC). Xây dựng RESTful APIs quản lý sản phẩm, đơn hàng, người dùng. Thiết kế cơ sở dữ liệu MySQL, xử lý truy vấn thống kê và báo cáo. Xây dựng logic xác thực JWT, đánh giá sản phẩm, quản lý khuyến mãi.",
+    images: ["/images/projects/E_Books/book1.png"],
+    link: "https://github.com/icrRick/theBugs_book_ecommerce",
   },
 ];
+
 
 // --- Carousel Component ---
 function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
@@ -165,9 +170,20 @@ export function ProjectShowcase() {
                 </p>
 
                 <div className="mt-8 md:mt-12">
-                  <button className="text-xs font-semibold tracking-widest uppercase border-b border-foreground pb-1 hover:text-primary hover:border-primary transition-colors">
-                    View Project
-                  </button>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold tracking-widest uppercase border-b border-foreground pb-1 hover:text-primary hover:border-primary transition-colors"
+                    >
+                      View Project ↗
+                    </a>
+                  ) : (
+                    <span className="text-xs font-semibold tracking-widest uppercase text-muted-foreground border-b border-muted-foreground pb-1">
+                      Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
