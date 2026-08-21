@@ -18,44 +18,37 @@ export function Navigation() {
   ];
 
   useEffect(() => {
-    const scrollContainer = document.querySelector('main');
-    if (!scrollContainer) return;
+    const sectionIds = ["home", "experience", "skill", "project"];
+    const scrollContainer = document.querySelector("main");
 
-    const handleScroll = () => {
-      const scrollTop = scrollContainer.scrollTop;
-      const containerHeight = scrollContainer.clientHeight;
-
-      // Find the active section (the one that occupies the middle of the screen)
-      let currentActive = "home";
-
-      for (const item of navItems) {
-        const el = document.getElementById(item.id);
-        if (el) {
-          const offsetTop = el.offsetTop;
-          const offsetHeight = el.offsetHeight;
-
-          // Check if the middle of the screen is within this section
-          if (
-            scrollTop + containerHeight / 2 >= offsetTop &&
-            scrollTop + containerHeight / 2 < offsetTop + offsetHeight
-          ) {
-            currentActive = item.id;
-            break; // Found the active section
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries.filter((e) => e.isIntersecting);
+        if (intersecting.length > 0) {
+          const topEntry = intersecting.reduce((prev, current) =>
+            current.intersectionRatio > prev.intersectionRatio ? current : prev
+          );
+          if (topEntry.target.id) {
+            setActiveSection(topEntry.target.id);
           }
         }
+      },
+      {
+        root: scrollContainer,
+        rootMargin: "-15% 0px -35% 0px",
+        threshold: [0.1, 0.25, 0.5, 0.75],
       }
+    );
 
-      setActiveSection(currentActive);
-    };
-
-    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
-    // Initial calculation
-    setTimeout(handleScroll, 100);
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
 
     return () => {
-      scrollContainer.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
     };
-  }, [language]);
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();

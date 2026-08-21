@@ -2,14 +2,14 @@
 import { useEffect, useRef } from 'react';
 
 function SplashCursor({
-  SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 1440,
-  CAPTURE_RESOLUTION = 512,
+  SIM_RESOLUTION = 64,
+  DYE_RESOLUTION = 512,
+  CAPTURE_RESOLUTION = 256,
   DENSITY_DISSIPATION = 3.5,
   VELOCITY_DISSIPATION = 2,
   PRESSURE = 0.1,
-  PRESSURE_ITERATIONS = 20,
-  CURL = 3,
+  PRESSURE_ITERATIONS = 8,
+  CURL = 4,
   SPLAT_RADIUS = 0.2,
   SPLAT_FORCE = 6000,
   SHADING = true,
@@ -677,16 +677,52 @@ function SplashCursor({
     initFramebuffers();
     let lastUpdateTime = Date.now();
     let colorUpdateTimer = 0.0;
+    let isRunning = false;
+    let idleFrames = 0;
+    const MAX_IDLE_FRAMES = 80; // ~1.3 seconds idle sleep
+
+    function wakeUp() {
+      idleFrames = 0;
+      if (!isRunning && isActive) {
+        isRunning = true;
+        lastUpdateTime = Date.now();
+        animationFrameId.current = requestAnimationFrame(updateFrame);
+      }
+    }
 
     function updateFrame() {
-      if (!isActive) return;
+      if (!isActive) {
+        isRunning = false;
+        return;
+      }
       const dt = calcDeltaTime();
       if (resizeCanvas()) initFramebuffers();
+
+      let hasActiveInput = false;
+      for (let i = 0; i < pointers.length; i++) {
+        if (pointers[i].moved || pointers[i].down) {
+          hasActiveInput = true;
+          break;
+        }
+      }
+
+      if (hasActiveInput) {
+        idleFrames = 0;
+      } else {
+        idleFrames++;
+      }
+
       updateColors(dt);
       applyInputs();
       step(dt);
       render(null);
-      animationFrameId.current = requestAnimationFrame(updateFrame);
+
+      if (idleFrames < MAX_IDLE_FRAMES) {
+        animationFrameId.current = requestAnimationFrame(updateFrame);
+      } else {
+        isRunning = false;
+        animationFrameId.current = null;
+      }
     }
 
     function calcDeltaTime() {
@@ -985,6 +1021,7 @@ function SplashCursor({
       let posY = scaleByPixelRatio(e.clientY);
       updatePointerDownData(pointer, -1, posX, posY);
       clickSplat(pointer);
+      wakeUp();
     }
 
     let firstMouseMoveHandled = false;
@@ -999,6 +1036,7 @@ function SplashCursor({
       } else {
         updatePointerMoveData(pointer, posX, posY, pointer.color);
       }
+      wakeUp();
     }
 
     function handleTouchStart(e) {
@@ -1009,6 +1047,7 @@ function SplashCursor({
         let posY = scaleByPixelRatio(touches[i].clientY);
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
+      wakeUp();
     }
 
     function handleTouchMove(e) {
@@ -1019,6 +1058,7 @@ function SplashCursor({
         let posY = scaleByPixelRatio(touches[i].clientY);
         updatePointerMoveData(pointer, posX, posY, pointer.color);
       }
+      wakeUp();
     }
 
     function handleTouchEnd(e) {
@@ -1027,16 +1067,17 @@ function SplashCursor({
       for (let i = 0; i < touches.length; i++) {
         updatePointerUpData(pointer);
       }
+      wakeUp();
     }
 
     // Add event listeners
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchmove', handleTouchMove, false);
-    window.addEventListener('touchend', handleTouchEnd);
+    window.addEventListener('mousedown', handleMouseDown, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
-    updateFrame();
+    wakeUp();
 
     // Cleanup function
     return () => {

@@ -109,7 +109,7 @@ export default function StackedSections({
 
         if (covered) {
           content.dataset.stackedCovered = "";
-          content.style.transform = `scale(${endScale})`;
+          content.style.transform = `scale3d(${endScale}, ${endScale}, 1)`;
           continue;
         }
 
@@ -127,7 +127,7 @@ export default function StackedSections({
         const distance = Math.max(rowH - pinnedTop, 1);
         const progress = clamp(1 - offset / distance, 0, 1);
         const scale = 1 + (endScale - 1) * progress;
-        content.style.transform = progress <= 0.001 ? "" : `scale(${scale})`;
+        content.style.transform = progress <= 0.001 ? "" : `scale3d(${scale}, ${scale}, 1)`;
       }
     };
 
@@ -166,6 +166,11 @@ export default function StackedSections({
   return (
     <>
       <style>{`
+        [data-stacked-content] {
+          will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+        }
         [data-stacked-content][data-stacked-covered] {
           transform-origin: 50% 0%;
         }

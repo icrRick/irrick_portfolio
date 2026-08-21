@@ -1,82 +1,88 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CircleCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [isHovering, setIsHovering] = useState(false);
+  const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Only enable custom cursor on non-touch devices
+    // Only enable custom cursor on non-touch devices with fine pointer
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
-    // Hide default cursor
+    // Hide default cursor on desktop
     document.body.style.cursor = "none";
-    
-    // Select all interactive elements
-    const addHoverStyle = () => setIsHovering(true);
-    const removeHoverStyle = () => setIsHovering(false);
 
-    const attachListeners = () => {
-      document.querySelectorAll('a, button, [role="button"], input, select, textarea').forEach(el => {
-        el.addEventListener('mouseenter', addHoverStyle);
-        el.addEventListener('mouseleave', removeHoverStyle);
-      });
+    // Direct hardware-accelerated position update without React state
+    let rafId: number | null = null;
+    let targetX = -100;
+    let targetY = -100;
+
+    const render = () => {
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+      }
+      rafId = null;
     };
 
-    attachListeners();
-
-    // Use MutationObserver to attach listeners to newly added elements
-    const observer = new MutationObserver(() => {
-      attachListeners();
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    const updatePosition = (e: MouseEvent) => {
-      if (cursorRef.current) {
-        // Use translate3d for hardware-accelerated, zero-lag movement. No scale here.
-        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+    const handleMouseMove = (e: MouseEvent) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+      if (!rafId) {
+        rafId = requestAnimationFrame(render);
       }
     };
 
-    window.addEventListener("mousemove", updatePosition);
+    // Event delegation: Zero DOM queries, zero MutationObservers
+    const interactiveSelector = 'a, button, [role="button"], input, select, textarea, [data-cursor-hover]';
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.closest(interactiveSelector)) {
+        if (ringRef.current) {
+          ringRef.current.classList.add("scale-150", "bg-white/20");
+          ringRef.current.classList.remove("scale-100", "bg-transparent");
+        }
+      }
+    };
+
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.closest(interactiveSelector)) {
+        if (ringRef.current) {
+          ringRef.current.classList.remove("scale-150", "bg-white/20");
+          ringRef.current.classList.add("scale-100", "bg-transparent");
+        }
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mouseover", handleMouseOver, { passive: true });
+    document.addEventListener("mouseout", handleMouseOut, { passive: true });
 
     return () => {
       document.body.style.cursor = "auto";
-      window.removeEventListener("mousemove", updatePosition);
-      observer.disconnect();
-      document.querySelectorAll('a, button, [role="button"], input, select, textarea').forEach(el => {
-        el.removeEventListener('mouseenter', addHoverStyle);
-        el.removeEventListener('mouseleave', removeHoverStyle);
-      });
+      window.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
     };
-  }, [isHovering]);
-
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      setIsTouchDevice(true);
-    }
   }, []);
-
-  if (isTouchDevice) {
-    return null;
-  }
 
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-50 hidden md:block mix-blend-difference will-change-transform"
       style={{
-        // Initial state before first mousemove
-        transform: "translate3d(-100px, -100px, 0)"
+        transform: "translate3d(-100px, -100px, 0)",
+        zIndex: 9999,
       }}
     >
-      <div 
-        className={`w-8 h-8 border border-white rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out ${
-          isHovering ? "scale-150 bg-white/20" : "scale-100 bg-transparent"
-        }`}
+      <div
+        ref={ringRef}
+        className="w-8 h-8 border border-white rounded-full transform -translate-x-1/2 -translate-y-1/2 scale-100 bg-transparent transition-transform duration-200 ease-out will-change-transform"
       />
     </div>
   );

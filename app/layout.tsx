@@ -107,10 +107,13 @@ export default function RootLayout({
             {/* Background Animation */}
             <div className="fixed inset-0 z-0 pointer-events-none">
               <SplashCursor
+                SIM_RESOLUTION={64}
+                DYE_RESOLUTION={512}
+                PRESSURE_ITERATIONS={8}
                 DENSITY_DISSIPATION={2.5}
                 VELOCITY_DISSIPATION={0.2}
                 PRESSURE={0.15}
-                CURL={6}
+                CURL={4}
                 SPLAT_RADIUS={0.1}
                 SPLAT_FORCE={1000}
                 COLOR_UPDATE_SPEED={11}
