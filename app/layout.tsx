@@ -139,8 +139,8 @@ export default function RootLayout({
             {/* Left Side: Navigation Menu */}
             <Navigation />
 
-            {/* Right Side: Social Tab */}
-            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-foreground text-background py-6 px-3 flex flex-col items-center gap-6 shadow-2xl">
+            {/* Right Side: Social Tab (Desktop only) */}
+            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-foreground text-background py-6 px-3 hidden md:flex flex-col items-center gap-6 shadow-2xl">
               <a href="https://github.com/icrRick" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="GitHub Profile">
                 <GithubIcon className="w-5 h-5" />
               </a>

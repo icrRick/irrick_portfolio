@@ -18,20 +18,20 @@ export default function HomePage() {
     <div className="w-full flex flex-col pointer-events-auto">
       
       {/* SECTION: HOME */}
-      <section id="home" className="w-full min-h-[100dvh] flex items-center p-8 pt-40 md:pt-4 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
-        <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-16 xl:gap-28 items-center md:items-start justify-between">
+      <section id="home" className="w-full min-h-[100dvh] flex items-center px-6 py-12 pt-24 md:p-8 md:pt-4 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
+        <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-12 md:gap-16 xl:gap-28 items-center md:items-start justify-between">
           
           {/* Left Side: Huge Name & Rotating Title */}
-          <div className="flex flex-col flex-1 mt-6 md:mt-16">
-            <h1 className="font-heading font-extralight text-5xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[1.08] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit flex flex-col">
+          <div className="flex flex-col flex-1 mt-4 md:mt-16 w-full">
+            <h1 className="font-heading font-extralight text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[1.08] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit flex flex-col">
               <AnimatedLetters text="PHAM NGUYEN" />
               <AnimatedLetters text="TRONG TRI" delay={0.55} />
             </h1>
-            <div className="mt-6 md:mt-8 text-lg md:text-2xl font-light text-muted-foreground tracking-wide h-[32px] flex items-center">
+            <div className="mt-4 md:mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground tracking-wide h-[32px] flex items-center">
               <RotatingTypingText texts={roleTitles} />
             </div>
 
-            <BlurFade delay={1.4} className="mt-20 md:mt-32 xl:mt-48">
+            <BlurFade delay={1.4} className="mt-12 md:mt-32 xl:mt-48">
               <div className="flex flex-col gap-1 text-sm text-muted-foreground">
                 <p>
                   {t(tr.home.contact, language)}{" "}
@@ -47,9 +47,9 @@ export default function HomePage() {
           </div>
 
           {/* Right Side: About Me */}
-          <div className="w-full md:w-80 lg:w-96 shrink-0 md:mt-96">
+          <div className="w-full md:w-80 lg:w-96 shrink-0 mt-8 md:mt-96">
             <SlideUpStagger delay={1.6}>
-              <h2 className="text-xl font-normal tracking-widest uppercase mb-6 pb-2 border-b border-border/50 text-muted-foreground">
+              <h2 className="text-lg md:text-xl font-normal tracking-widest uppercase mb-4 md:mb-6 pb-2 border-b border-border/50 text-muted-foreground">
                 {t(tr.home.aboutTitle, language)}
               </h2>
               <p className="text-sm md:text-base leading-relaxed text-foreground/80 font-light mb-4">
@@ -64,7 +64,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: EXPERIENCE */}
-      <section id="experience" className="w-full min-h-[90dvh] flex items-center p-8 pt-32 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
+      <section id="experience" className="w-full min-h-[90dvh] flex items-center px-6 py-12 pt-20 md:p-8 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col">
           <BlurFade>
             <div className="mb-12">
@@ -158,7 +158,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: SKILL */}
-      <section id="skill" className="w-full min-h-[100dvh] flex items-center p-8 pt-32 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
+      <section id="skill" className="w-full min-h-[100dvh] flex items-center px-6 py-12 pt-20 md:p-8 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col">
           <BlurFade>
             <div className="mb-14">
@@ -281,7 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: PROJECT */}
-      <section id="project" className="w-full relative z-10 px-8 md:pl-28 lg:pl-40 xl:pl-56">
+      <section id="project" className="w-full relative z-10 px-6 py-12 pt-16 md:p-8 md:pt-20 md:pl-28 lg:pl-40 xl:pl-56">
         <ProjectShowcase />
       </section>
 
