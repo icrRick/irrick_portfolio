@@ -9,6 +9,7 @@ import { Navigation } from "@/components/navigation";
 import { GithubIcon, PhoneIcon, FacebookIcon } from "@/components/icons";
 import SplashCursor from "@/components/SplashCursor";
 import { CircleCursor } from "@/components/circle-cursor";
+import { SeoJsonLd } from "@/components/seo-json-ld";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,49 +25,76 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://irrick-portfolio.vercel.app"),
-  title: "Pham Nguyen Trong Tri | Backend & Full-Stack Developer",
-  description: "Portfolio of Pham Nguyen Trong Tri. Backend Developer specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+  title: {
+    default: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    template: "%s | Pham Nguyen Trong Tri",
+  },
+  description:
+    "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, and scalable system architecture.",
+  applicationName: "Pham Nguyen Trong Tri Portfolio",
+  authors: [{ name: "Pham Nguyen Trong Tri (irrick)", url: "https://irrick-portfolio.vercel.app" }],
+  generator: "Next.js",
   keywords: [
+    "Phạm Nguyễn Trọng Trí",
     "Pham Nguyen Trong Tri",
-    "Portfolio",
-    "Backend Developer",
-    "Full-Stack Engineer",
-    "NestJS",
-    "TypeScript",
-    "Redis",
-    "BullMQ",
-    "MongoDB",
-    "FastAPI",
-    "Spring Boot",
-    "Python",
-    "Java",
-    "Next.js",
+    "irrick",
+    "icrRick",
+    "Trọng Trí",
+    "Trong Tri Pham",
+    "Pham Trong Tri",
+    "Backend Developer Can Tho",
+    "Lập trình viên Backend Cần Thơ",
+    "Kỹ sư phần mềm Cần Thơ",
+    "Backend Developer Vietnam",
+    "Full-Stack Developer Vietnam",
+    "NestJS Developer",
+    "Spring Boot Developer",
+    "FastAPI Python Developer",
+    "Redis BullMQ Message Queue",
     "System Architecture",
-    "Software Engineer",
+    "Portfolio Developer",
+    "Software Engineer Portfolio",
+    "Can Tho Developer",
   ],
-  authors: [{ name: "Pham Nguyen Trong Tri" }],
   creator: "Pham Nguyen Trong Tri",
+  publisher: "Pham Nguyen Trong Tri",
+  alternates: {
+    canonical: "https://irrick-portfolio.vercel.app",
+    languages: {
+      "vi-VN": "https://irrick-portfolio.vercel.app/?lang=vi",
+      "en-US": "https://irrick-portfolio.vercel.app/?lang=en",
+    },
+  },
+  category: "technology",
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: "profile",
+    firstName: "Trong Tri",
+    lastName: "Pham Nguyen",
+    username: "irrick",
+    gender: "male",
+    locale: "vi_VN",
+    alternateLocale: ["en_US"],
     url: "https://irrick-portfolio.vercel.app",
-    title: "Pham Nguyen Trong Tri | Backend & Full-Stack Developer",
-    description: "Portfolio of Pham Nguyen Trong Tri. Backend Developer specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+    title: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    description:
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
     siteName: "Pham Nguyen Trong Tri Portfolio",
     images: [
       {
         url: "/preview_img.png",
         width: 1200,
         height: 630,
-        alt: "Pham Nguyen Trong Tri - Portfolio",
+        alt: "Pham Nguyen Trong Tri (irrick) - Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pham Nguyen Trong Tri | Backend & Full-Stack Developer",
-    description: "Portfolio of Pham Nguyen Trong Tri. Backend Developer specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+    title: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    description:
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
     images: ["/preview_img.png"],
+    creator: "@icrRick",
   },
   robots: {
     index: true,
@@ -92,6 +120,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${montserrat.variable} antialiased`}
     >
+      <head>
+        <SeoJsonLd />
+      </head>
       <body 
         className="h-screen w-screen overflow-hidden flex flex-col bg-background text-foreground font-sans tracking-wide selection:bg-foreground selection:text-background"
         suppressHydrationWarning
@@ -141,13 +172,13 @@ export default function RootLayout({
 
             {/* Right Side: Social Tab (Desktop only) */}
             <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-foreground text-background py-6 px-3 hidden md:flex flex-col items-center gap-6 shadow-2xl">
-              <a href="https://github.com/icrRick" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="GitHub Profile">
+              <a href="https://github.com/icrRick" target="_blank" rel="me noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="GitHub Profile">
                 <GithubIcon className="w-5 h-5" />
               </a>
               <a href="tel:+84899010230" className="hover:opacity-70 transition-opacity" aria-label="Phone Call">
                 <PhoneIcon className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com/irrickk" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook Profile">
+              <a href="https://facebook.com/irrickk" target="_blank" rel="me noopener noreferrer" className="hover:opacity-70 transition-opacity" aria-label="Facebook Profile">
                 <FacebookIcon className="w-5 h-5" />
               </a>
             </div>
@@ -167,3 +198,4 @@ export default function RootLayout({
     </html>
   );
 }
+

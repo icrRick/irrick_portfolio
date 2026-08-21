@@ -23,7 +23,10 @@ export default function HomePage() {
           
           {/* Left Side: Huge Name & Rotating Title */}
           <div className="flex flex-col flex-1 mt-4 md:mt-16 w-full">
-            <h1 className="font-heading font-extralight text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[1.08] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit flex flex-col">
+            <h1
+              aria-label="PHAM NGUYEN TRONG TRI"
+              className="font-heading font-extralight text-4xl sm:text-6xl md:text-7xl lg:text-[6.5rem] leading-[1.08] tracking-wide uppercase transform scale-x-[1.05] scale-y-[0.95] origin-left w-fit flex flex-col"
+            >
               <AnimatedLetters text="PHAM NGUYEN" />
               <AnimatedLetters text="TRONG TRI" delay={0.55} />
             </h1>
