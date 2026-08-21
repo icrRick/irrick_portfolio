@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, Variants } from "framer-motion";
-import { ReactNode, useRef, Children, isValidElement } from "react";
+import { ReactNode, useRef, Children, isValidElement, useState, useEffect } from "react";
 
 // Blur Fade In (similar to Animata's standard fade)
 export function BlurFade({
@@ -75,7 +75,7 @@ export function AnimatedLetters({
   );
 }
 
-// Typing Text effect
+// Single Typing Text effect
 export function TypingText({
   text,
   className,
@@ -127,6 +127,73 @@ export function TypingText({
         className="inline-block w-[2px] h-[1em] bg-current ml-1 align-middle"
       />
     </motion.span>
+  );
+}
+
+// Rotating Typing Text (cycles between multiple roles)
+export function RotatingTypingText({
+  texts,
+  className,
+  typingSpeed = 65,
+  deletingSpeed = 35,
+  pauseDuration = 2200,
+}: {
+  texts: string[];
+  className?: string;
+  typingSpeed?: number;
+  deletingSpeed?: number;
+  pauseDuration?: number;
+}) {
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [blink, setBlink] = useState(true);
+
+  // Blinking cursor
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Typing & deleting effect
+  useEffect(() => {
+    if (!texts || texts.length === 0) return;
+    const currentFullText = texts[index % texts.length] || "";
+
+    if (!isDeleting && subIndex === currentFullText.length) {
+      const timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, pauseDuration);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && subIndex === 0) {
+      setIsDeleting(false);
+      setIndex((prev) => (prev + 1) % texts.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (isDeleting ? -1 : 1));
+    }, isDeleting ? deletingSpeed : typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, isDeleting, texts, typingSpeed, deletingSpeed, pauseDuration]);
+
+  const currentFullText = texts[index % texts.length] || "";
+  const displayedText = currentFullText.substring(0, subIndex);
+
+  return (
+    <span className={`inline-flex items-center ${className}`}>
+      <span>{displayedText}</span>
+      <span
+        className={`inline-block w-[2px] h-[1.1em] bg-primary ml-1 align-middle transition-opacity duration-150 ${
+          blink ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </span>
   );
 }
 

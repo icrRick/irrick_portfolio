@@ -11,9 +11,10 @@ export function Navigation() {
   const { language } = useLanguage();
 
   const navItems = [
-    { id: "home",    label: t(translations.nav.home,    language) },
-    { id: "skill",   label: t(translations.nav.skill,   language) },
-    { id: "project", label: t(translations.nav.project, language) },
+    { id: "home",       label: t(translations.nav.home,       language) },
+    { id: "experience", label: t(translations.nav.experience, language) },
+    { id: "skill",      label: t(translations.nav.skill,      language) },
+    { id: "project",    label: t(translations.nav.project,    language) },
   ];
 
   useEffect(() => {
@@ -49,13 +50,12 @@ export function Navigation() {
 
     scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
     // Initial calculation
-    // Timeout ensures DOM layout is fully complete before checking offsets
     setTimeout(handleScroll, 100);
 
     return () => {
       scrollContainer.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [language]);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-10 left-1/2 -translate-x-1/2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 z-50 flex flex-row md:flex-col gap-8 md:gap-6 text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-6 py-4 md:px-0 md:py-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-xl md:shadow-none">
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 z-50 flex flex-row md:flex-col gap-6 md:gap-6 text-[10px] md:text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto bg-background/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-5 py-3 md:px-0 md:py-0 rounded-full md:rounded-none border border-border/50 md:border-none shadow-xl md:shadow-none">
       {navItems.map((item) => {
         const isActive = activeSection === item.id;
 
@@ -91,7 +91,7 @@ export function Navigation() {
       })}
       
       {/* Theme Toggle + Language Toggle (Mobile Only) */}
-      <div className="md:hidden border-l border-border/50 pl-4 ml-auto flex items-center gap-2">
+      <div className="md:hidden border-l border-border/50 pl-3 ml-auto flex items-center gap-1.5">
         <LanguageToggle />
         <ThemeToggle />
       </div>

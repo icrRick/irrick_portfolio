@@ -6,8 +6,15 @@ import StackedSections from "@/components/ui/stacked-section";
 import { useLanguage } from "@/lib/language-context";
 import { translations, t } from "@/lib/translations";
 
-// --- Project data structure now uses translation keys ---
+// --- Project data structure with translation keys ---
 const projectKeys = [
+  {
+    id: "proj-onemekong",
+    year: "7/2026 – Present",
+    trKey: "onemekong" as const,
+    images: ["/images/projects/OneMekong/onemekong_1.svg"],
+    link: "https://github.com/icrRick",
+  },
   {
     id: "proj-spidernews",
     year: "6/2026 – 7/2026",
@@ -21,16 +28,6 @@ const projectKeys = [
     trKey: "mekong" as const,
     images: ["/images/projects/MekongHighTech/mekong_1.png"],
     link: "https://mekong-hightech-summit-3.vercel.app/vi/",
-  },
-  {
-    id: "proj-tuyensinh",
-    year: "5/2026",
-    trKey: "tuyensinh" as const,
-    images: [
-      "/images/projects/TuyenSinh/ts_1.png",
-      "/images/projects/TuyenSinh/ts_2.png",
-    ],
-    link: "https://demo-dnc.vercel.app/",
   },
   {
     id: "proj-ebooks",
@@ -51,7 +48,7 @@ function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
 
   useEffect(() => {
     if (images.length <= 1) return;
-    const timer = setInterval(next, 3000);
+    const timer = setInterval(next, 3500);
     return () => clearInterval(timer);
   }, [images.length, next]);
 
@@ -84,7 +81,7 @@ function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-10" />
 
       {images.length > 1 && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
@@ -122,37 +119,38 @@ export function ProjectShowcase() {
       <div className="w-full">
         <StackedSections stackOffset={48} paneGap="gap-6 md:gap-10">
           {projectKeys.map((proj) => {
-            const name        = t(tr[proj.trKey].name,        language);
-            const role        = t(tr[proj.trKey].role,        language);
-            const description = t(tr[proj.trKey].description, language);
+            const projectData = tr[proj.trKey];
+            const name        = t(projectData.name,        language);
+            const role        = t(projectData.role,        language);
+            const description = t(projectData.description, language);
 
             return (
               <div
                 key={proj.id}
                 id={proj.id}
-                className="w-full min-h-[50vh] md:h-[80vh] flex flex-col md:flex-row bg-background border border-border rounded-xs md:rounded-sm shadow-xl overflow-hidden group"
+                className="w-full min-h-[50vh] md:h-[82vh] flex flex-col md:flex-row bg-background border border-border rounded-xs md:rounded-sm shadow-xl overflow-hidden group"
               >
                 {/* Image / Carousel Section */}
-                <div className="w-full md:w-[60%] h-64 md:h-full bg-secondary/30 relative overflow-hidden border-b md:border-b-0 md:border-r border-border">
+                <div className="w-full md:w-[58%] h-64 md:h-full bg-secondary/30 relative overflow-hidden border-b md:border-b-0 md:border-r border-border">
                   <ProjectCarousel images={proj.images} name={name} />
                 </div>
 
                 {/* Content Section */}
-                <div className="w-full md:w-[40%] flex flex-col justify-center p-8 md:p-12 lg:p-16">
-                  <span className="text-xs font-mono tracking-wider text-muted-foreground mb-4 md:mb-6">
+                <div className="w-full md:w-[42%] flex flex-col justify-center p-8 md:p-12 lg:p-14 overflow-y-auto">
+                  <span className="text-xs font-mono tracking-wider text-muted-foreground mb-3 md:mb-4">
                     {proj.year}
                   </span>
-                  <h3 className="font-heading font-light tracking-tight text-3xl md:text-5xl lg:text-6xl mb-2 md:mb-4 transition-colors group-hover:text-primary">
+                  <h3 className="font-heading font-light tracking-tight text-3xl md:text-4xl lg:text-5xl mb-2 md:mb-3 transition-colors group-hover:text-primary">
                     {name}
                   </h3>
-                  <span className="text-xs font-light tracking-widest uppercase text-muted-foreground mb-6 md:mb-8">
+                  <span className="text-xs font-light tracking-widest uppercase text-muted-foreground mb-5 md:mb-6 leading-relaxed">
                     {role}
                   </span>
-                  <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground font-light leading-relaxed">
                     {description}
                   </p>
 
-                  <div className="mt-8 md:mt-12">
+                  <div className="mt-6 md:mt-10">
                     {proj.link ? (
                       <a
                         href={proj.link}

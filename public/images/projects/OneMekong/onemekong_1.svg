@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="50%" stop-color="#0f0f16"/>
+      <stop offset="100%" stop-color="#060608"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#121215" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="750" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="150" x2="1200" y2="150"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="750"/>
+    <line x1="400" y1="0" x2="400" y2="750"/>
+    <line x1="600" y1="0" x2="600" y2="750"/>
+    <line x1="800" y1="0" x2="800" y2="750"/>
+    <line x1="1000" y1="0" x2="1000" y2="750"/>
+  </g>
+
+  <!-- Background Decorative Glow -->
+  <circle cx="200" cy="150" r="180" fill="#8b5cf6" fill-opacity="0.1" filter="blur(60px)"/>
+  <circle cx="1000" cy="600" r="220" fill="#3b82f6" fill-opacity="0.08" filter="blur(70px)"/>
+
+  <!-- Top App Navigation Bar -->
+  <g transform="translate(40, 30)">
+    <rect width="1120" height="60" rx="12" fill="url(#cardGrad)" stroke="#27272a" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <!-- Window Control Dots -->
+    <circle cx="28" cy="30" r="5.5" fill="#ef4444" opacity="0.8"/>
+    <circle cx="46" cy="30" r="5.5" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="64" cy="30" r="5.5" fill="#10b981" opacity="0.8"/>
+
+    <!-- App Title & Breadcrumb -->
+    <text x="96" y="36" fill="#f4f4f5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" letter-spacing="0.5">ONE MEKONG</text>
+    <text x="215" y="36" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">/ Restaurant &amp; Hotel Backend Ecosystem</text>
+
+    <!-- Status Badges -->
+    <g transform="translate(680, 16)">
+      <!-- NestJS Badge -->
+      <rect x="0" y="0" width="115" height="28" rx="14" fill="#e0234e" fill-opacity="0.15" stroke="#e0234e" stroke-opacity="0.3"/>
+      <circle cx="14" cy="14" r="3.5" fill="#e0234e"/>
+      <text x="26" y="18" fill="#fda4af" font-family="monospace" font-size="11" font-weight="600">NestJS Core</text>
+
+      <!-- BullMQ + Redis Badge -->
+      <rect x="125" y="0" width="135" height="28" rx="14" fill="#dc2626" fill-opacity="0.15" stroke="#dc2626" stroke-opacity="0.3"/>
+      <circle cx="139" cy="14" r="3.5" fill="#ef4444"/>
+      <text x="151" y="18" fill="#fca5a5" font-family="monospace" font-size="11" font-weight="600">BullMQ + Redis</text>
+
+      <!-- MongoDB Badge -->
+      <rect x="270" y="0" width="150" height="28" rx="14" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.3"/>
+      <circle cx="284" cy="14" r="3.5" fill="#10b981"/>
+      <text x="296" y="18" fill="#6ee7b7" font-family="monospace" font-size="11" font-weight="600">MongoDB Indexing</text>
+    </g>
+  </g>
+
+  <!-- Main Left Card: Hotel Booking Engine & Order Generator -->
+  <g transform="translate(40, 110)">
+    <rect width="620" height="380" rx="14" fill="url(#cardGrad)" stroke="#27272a" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <text x="28" y="42" fill="#a1a1aa" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">HOTEL BOOKING &amp; ORDER ENGINE</text>
+    <text x="28" y="74" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="600">High-Concurrency Booking Architecture</text>
+    
+    <!-- Metric Boxes -->
+    <g transform="translate(28, 98)">
+      <rect width="170" height="85" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+      <text x="16" y="28" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Unique Order UID Rate</text>
+      <text x="16" y="58" fill="#a855f7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700">1,000,000,000</text>
+      <text x="16" y="74" fill="#a1a1aa" font-family="monospace" font-size="10">Non-colliding / Year</text>
+    </g>
+
+    <g transform="translate(212, 98)">
+      <rect width="170" height="85" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+      <text x="16" y="28" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Session Control</text>
+      <text x="16" y="58" fill="#3b82f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700">1 Web + 1 App</text>
+      <text x="16" y="74" fill="#a1a1aa" font-family="monospace" font-size="10">JWT Concurrent Limit</text>
+    </g>
+
+    <g transform="translate(396, 98)">
+      <rect width="194" height="85" rx="10" fill="#18181b" stroke="#3f3f46" stroke-width="0.8"/>
+      <text x="16" y="28" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">SMS OTP Security</text>
+      <text x="16" y="58" fill="#10b981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700">Rate Limited</text>
+      <text x="16" y="74" fill="#a1a1aa" font-family="monospace" font-size="10">Sliding Window Redis</text>
+    </g>
+
+    <!-- Simulated REST API / Architecture Flow -->
+    <g transform="translate(28, 204)">
+      <rect width="564" height="150" rx="10" fill="#09090b" stroke="#27272a" stroke-width="0.8"/>
+      <text x="18" y="28" fill="#71717a" font-family="monospace" font-size="11">HTTP POST /api/v1/booking/reserve</text>
+      
+      <g transform="translate(18, 44)">
+        <rect x="0" y="0" width="100" height="34" rx="6" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-opacity="0.4"/>
+        <text x="14" y="22" fill="#c4b5fd" font-family="monospace" font-size="11">Auth Guard</text>
+
+        <path d="M 106 17 L 128 17" stroke="#71717a" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+        <rect x="134" y="0" width="125" height="34" rx="6" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-opacity="0.4"/>
+        <text x="144" y="22" fill="#93c5fd" font-family="monospace" font-size="11">Booking Service</text>
+
+        <path d="M 265 17 L 287 17" stroke="#71717a" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+        <rect x="293" y="0" width="115" height="34" rx="6" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-opacity="0.4"/>
+        <text x="305" y="22" fill="#f472b6" font-family="monospace" font-size="11">BullMQ Queue</text>
+
+        <path d="M 414 17 L 436 17" stroke="#71717a" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+        <rect x="442" y="0" width="85" height="34" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.4"/>
+        <text x="456" y="22" fill="#6ee7b7" font-family="monospace" font-size="11">MongoDB</text>
+      </g>
+
+      <text x="18" y="112" fill="#52525b" font-family="monospace" font-size="11">&gt; 200 OK — Order UID #OMK-2026-94819472 generated in 18ms</text>
+      <text x="18" y="132" fill="#10b981" font-family="monospace" font-size="11">&gt; Async Mail Job #4812 dispatched to BullMQ worker queue</text>
+    </g>
+  </g>
+
+  <!-- Right Top Card: Message Queue & Cronjob Subsystem -->
+  <g transform="translate(680, 110)">
+    <rect width="480" height="380" rx="14" fill="url(#cardGrad)" stroke="#27272a" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <text x="28" y="42" fill="#a1a1aa" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">MESSAGE QUEUE &amp; BACKGROUND TASKS</text>
+    <text x="28" y="74" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="600">BullMQ + Redis Worker Pipeline</text>
+
+    <!-- Queue Status Bars -->
+    <g transform="translate(28, 96)">
+      <!-- Job 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="424" height="48" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <circle cx="20" cy="24" r="4" fill="#10b981"/>
+        <text x="36" y="28" fill="#e4e4e7" font-family="monospace" font-size="12">mail.booking.confirmation</text>
+        <rect x="300" y="14" width="108" height="20" rx="10" fill="#10b981" fill-opacity="0.15"/>
+        <text x="315" y="28" fill="#34d399" font-family="monospace" font-size="10">PROCESSED (0ms)</text>
+      </g>
+
+      <!-- Job 2 -->
+      <g transform="translate(0, 58)">
+        <rect width="424" height="48" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <circle cx="20" cy="24" r="4" fill="#3b82f6"/>
+        <text x="36" y="28" fill="#e4e4e7" font-family="monospace" font-size="12">cron.room.availability_sync</text>
+        <rect x="300" y="14" width="108" height="20" rx="10" fill="#3b82f6" fill-opacity="0.15"/>
+        <text x="325" y="28" fill="#60a5fa" font-family="monospace" font-size="10">SCHEDULED</text>
+      </g>
+
+      <!-- Job 3 -->
+      <g transform="translate(0, 116)">
+        <rect width="424" height="48" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <circle cx="20" cy="24" r="4" fill="#8b5cf6"/>
+        <text x="36" y="28" fill="#e4e4e7" font-family="monospace" font-size="12">auth.otp.sms_rate_cleaner</text>
+        <rect x="300" y="14" width="108" height="20" rx="10" fill="#8b5cf6" fill-opacity="0.15"/>
+        <text x="330" y="28" fill="#c084fc" font-family="monospace" font-size="10">RECURRING</text>
+      </g>
+
+      <!-- Live Throughput Graph simulation -->
+      <g transform="translate(0, 178)">
+        <rect width="424" height="74" rx="8" fill="#09090b" stroke="#27272a" stroke-width="0.8"/>
+        <text x="14" y="20" fill="#71717a" font-family="monospace" font-size="10">REDIS QUEUE THROUGHPUT / LATENCY</text>
+        <path d="M 14 55 Q 60 30, 110 45 T 210 35 T 310 48 T 410 25" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
+        <text x="330" y="65" fill="#a855f7" font-family="monospace" font-size="10">~1,850 ops/sec</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Panel: MongoDB Indexing & Query Optimization -->
+  <g transform="translate(40, 510)">
+    <rect width="1120" height="200" rx="14" fill="url(#cardGrad)" stroke="#27272a" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <text x="28" y="38" fill="#a1a1aa" font-family="monospace" font-size="11" font-weight="600" letter-spacing="1">DATABASE QUERY PERFORMANCE &amp; INDEXING STRATEGY</text>
+    <text x="28" y="66" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="600">MongoDB Multi-Tier Index Architecture</text>
+
+    <g transform="translate(28, 86)">
+      <!-- Tier 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="340" height="88" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <text x="16" y="26" fill="#10b981" font-family="monospace" font-size="12" font-weight="600">Single Index</text>
+        <text x="16" y="48" fill="#a1a1aa" font-family="monospace" font-size="11">{ "orderCode": 1 }, { "phone": 1 }</text>
+        <text x="16" y="70" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">O(1) Direct Key Point-Lookups</text>
+      </g>
+
+      <!-- Tier 2 -->
+      <g transform="translate(360, 0)">
+        <rect width="340" height="88" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <text x="16" y="26" fill="#3b82f6" font-family="monospace" font-size="12" font-weight="600">Compound Index</text>
+        <text x="16" y="48" fill="#a1a1aa" font-family="monospace" font-size="11">{ "hotelId": 1, "checkIn": 1, "status": 1 }</text>
+        <text x="16" y="70" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Optimized Multi-Filter Booking Search</text>
+      </g>
+
+      <!-- Tier 3 -->
+      <g transform="translate(720, 0)">
+        <rect width="340" height="88" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+        <text x="16" y="26" fill="#a855f7" font-family="monospace" font-size="12" font-weight="600">Partial Index</text>
+        <text x="16" y="48" fill="#a1a1aa" font-family="monospace" font-size="11">{ "status": "ACTIVE", "isDeleted": false }</text>
+        <text x="16" y="70" fill="#71717a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Reduced RAM Index Storage by 65%</text>
+      </g>
+    </g>
+  </g>
+</svg>
