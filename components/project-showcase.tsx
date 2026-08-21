@@ -67,17 +67,19 @@ function ProjectCarousel({ images, name }: { images: string[]; name: string }) {
       {images.map((src, idx) => (
         <div
           key={src}
-          className="absolute inset-0 transition-opacity duration-700 ease-in-out"
+          className="absolute inset-0 transition-opacity duration-700 ease-in-out flex items-center justify-center p-3 sm:p-5 md:p-6"
           style={{ opacity: idx === current ? 1 : 0 }}
         >
-          <Image
-            src={src}
-            alt={`${name} screenshot ${idx + 1}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 60vw"
-            priority={idx === 0}
-          />
+          <div className="relative w-full h-full flex items-center justify-center">
+            <Image
+              src={src}
+              alt={`${name} screenshot ${idx + 1}`}
+              fill
+              className="object-contain drop-shadow-md rounded-xs md:rounded-sm"
+              sizes="(max-width: 768px) 100vw, 60vw"
+              priority={idx === 0}
+            />
+          </div>
         </div>
       ))}
 
