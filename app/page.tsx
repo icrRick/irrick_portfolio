@@ -4,6 +4,7 @@ import { ProjectShowcase } from "@/components/project-showcase";
 import { BlurFade, AnimatedLetters, RotatingTypingText, SlideUpStagger } from "@/components/animata";
 import { useLanguage } from "@/lib/language-context";
 import { translations, t } from "@/lib/translations";
+import { DownloadIcon } from "@/components/icons";
 
 export default function HomePage() {
   const { language } = useLanguage();
@@ -18,7 +19,7 @@ export default function HomePage() {
     <div className="w-full flex flex-col pointer-events-auto">
       
       {/* SECTION: HOME */}
-      <section id="home" className="w-full min-h-[100dvh] flex items-center px-6 py-12 pt-24 md:p-8 md:pt-4 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
+      <section id="home" className="w-full min-h-dvh flex items-center px-6 py-12 pt-24 md:p-8 md:pt-4 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-12 md:gap-16 xl:gap-28 items-center md:items-start justify-between">
           
           {/* Left Side: Huge Name & Rotating Title */}
@@ -30,11 +31,26 @@ export default function HomePage() {
               <AnimatedLetters text="PHAM NGUYEN" />
               <AnimatedLetters text="TRONG TRI" delay={0.55} />
             </h1>
-            <div className="mt-4 md:mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground tracking-wide h-[32px] flex items-center">
+            <div className="mt-4 md:mt-8 text-base sm:text-lg md:text-2xl font-light text-muted-foreground tracking-wide h-8 flex items-center">
               <RotatingTypingText texts={roleTitles} />
             </div>
 
-            <BlurFade delay={1.4} className="mt-12 md:mt-32 xl:mt-48">
+            <BlurFade delay={1.4} className="mt-10 md:mt-24 xl:mt-32 flex flex-col gap-6">
+              {/* Actions: Download CV */}
+              <div>
+                <a
+                  href="/CV_PhamNguyenTrongTri.pdf"
+                  download="CV_PhamNguyenTrongTri.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-medium tracking-widest uppercase hover:bg-background hover:text-foreground transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+                >
+                  <DownloadIcon className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
+                  <span>{t(tr.home.downloadCv, language)}</span>
+                </a>
+              </div>
+
+              {/* Contact info */}
               <div className="flex flex-col gap-1 text-sm text-muted-foreground">
                 <p>
                   {t(tr.home.contact, language)}{" "}
@@ -74,7 +90,7 @@ export default function HomePage() {
               <h2 className="font-heading font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight uppercase mb-6">
                 {t(tr.experience.sectionTitle, language)}
               </h2>
-              <div className="w-full h-[1px] bg-border/70"></div>
+              <div className="w-full h-px bg-border/70"></div>
             </div>
           </BlurFade>
 
@@ -161,14 +177,14 @@ export default function HomePage() {
       </section>
 
       {/* SECTION: SKILL */}
-      <section id="skill" className="w-full min-h-[100dvh] flex items-center px-6 py-12 pt-20 md:p-8 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
+      <section id="skill" className="w-full min-h-dvh flex items-center px-6 py-12 pt-20 md:p-8 md:pt-12 md:pl-28 lg:pl-40 xl:pl-56 relative z-10">
         <div className="w-full max-w-7xl mx-auto flex flex-col">
           <BlurFade>
             <div className="mb-14">
               <h2 className="font-heading font-extralight text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight uppercase mb-6">
                 {t(tr.skills.title, language)}
               </h2>
-              <div className="w-full h-[1px] bg-border/70"></div>
+              <div className="w-full h-px bg-border/70"></div>
             </div>
           </BlurFade>
           

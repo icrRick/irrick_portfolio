@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
-import { GithubIcon, PhoneIcon, FacebookIcon } from "@/components/icons";
+import { GithubIcon, PhoneIcon, FacebookIcon, DownloadIcon } from "@/components/icons";
 import { useLanguage } from "@/lib/language-context";
 import { translations, t } from "@/lib/translations";
 
@@ -112,7 +112,7 @@ export function Navigation() {
             />
             <span
               className={`w-3.5 h-[1.5px] bg-foreground transition-all duration-300 ${
-                isOpen ? "-rotate-45 -translate-y-[5.5px]" : ""
+                isOpen ? "-rotate-45 translate-y-[-5.5px]" : ""
               }`}
             />
           </button>
@@ -161,6 +161,17 @@ export function Navigation() {
 
             {/* Bottom Info & Socials inside drawer */}
             <div className="flex flex-col gap-4 pt-6 border-t border-border/30 mt-auto">
+              <a
+                href="/CV_PhamNguyenTrongTri.pdf"
+                download="CV_PhamNguyenTrongTri.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-medium tracking-widest uppercase hover:bg-transparent hover:text-foreground transition-all duration-200"
+              >
+                <DownloadIcon className="w-3.5 h-3.5" />
+                <span>{t(translations.home.downloadCv, language)}</span>
+              </a>
+
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground font-light">Pham Nguyen Trong Tri</span>
                 <div className="flex items-center gap-3">
@@ -215,7 +226,7 @@ export function Navigation() {
               {item.label}
               {/* Animated Underline */}
               <span
-                className={`absolute -bottom-1 left-0 w-full h-[1px] bg-foreground origin-left transition-transform duration-300 ease-out ${
+                className={`absolute -bottom-1 left-0 w-full h-px bg-foreground origin-left transition-transform duration-300 ease-out ${
                   isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                 }`}
               ></span>

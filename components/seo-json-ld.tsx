@@ -18,9 +18,9 @@ export function SeoJsonLd() {
         "gender": "https://schema.org/Male",
         "url": "https://irrick-portfolio.vercel.app",
         "image": "https://irrick-portfolio.vercel.app/preview_img.png",
-        "jobTitle": "Backend Developer & Full-Stack Engineer",
+        "jobTitle": "Full-Stack Developer (Backend Focus)",
         "description":
-          "Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+          "Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
         "email": "mailto:trongtri.1975s@gmail.com",
         "telephone": "+84899010230",
         "address": {
@@ -60,13 +60,13 @@ export function SeoJsonLd() {
         ],
         "hasOccupation": {
           "@type": "Occupation",
-          "name": "Backend Developer",
+          "name": "Full-Stack Developer",
           "occupationLocation": {
             "@type": "City",
             "name": "Can Tho"
           },
           "skills":
-            "NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, System Architecture"
+            "NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, System Architecture"
         }
       },
       {
@@ -76,7 +76,7 @@ export function SeoJsonLd() {
         "name": "Pham Nguyen Trong Tri Portfolio",
         "alternateName": "irrick Portfolio",
         "description":
-          "Official Portfolio of Pham Nguyen Trong Tri (irrick) - Backend & Full-Stack Developer",
+          "Official Portfolio of Pham Nguyen Trong Tri (irrick) - Full-Stack Developer",
         "publisher": {
           "@id": "https://irrick-portfolio.vercel.app/#person"
         },
@@ -86,7 +86,7 @@ export function SeoJsonLd() {
         "@type": "ProfilePage",
         "@id": "https://irrick-portfolio.vercel.app/#profilepage",
         "url": "https://irrick-portfolio.vercel.app",
-        "name": "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+        "name": "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
         "isPartOf": {
           "@id": "https://irrick-portfolio.vercel.app/#website"
         },

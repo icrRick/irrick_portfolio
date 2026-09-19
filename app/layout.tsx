@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { LanguageProvider } from "@/lib/language-context";
 import { Navigation } from "@/components/navigation";
-import { GithubIcon, PhoneIcon, FacebookIcon } from "@/components/icons";
+import { GithubIcon, PhoneIcon, FacebookIcon, DownloadIcon } from "@/components/icons";
 import SplashCursor from "@/components/SplashCursor";
 import { CircleCursor } from "@/components/circle-cursor";
 import { SeoJsonLd } from "@/components/seo-json-ld";
@@ -26,11 +26,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://irrick-portfolio.vercel.app"),
   title: {
-    default: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    default: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
     template: "%s | Pham Nguyen Trong Tri",
   },
   description:
-    "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, and scalable system architecture.",
+    "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, and scalable system architecture.",
   applicationName: "Pham Nguyen Trong Tri Portfolio",
   authors: [{ name: "Pham Nguyen Trong Tri (irrick)", url: "https://irrick-portfolio.vercel.app" }],
   generator: "Next.js",
@@ -75,9 +75,9 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     alternateLocale: ["en_US"],
     url: "https://irrick-portfolio.vercel.app",
-    title: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    title: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
     siteName: "Pham Nguyen Trong Tri Portfolio",
     images: [
       {
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pham Nguyen Trong Tri (irrick) | Backend & Full-Stack Developer",
+    title: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Backend & Full-Stack Developer based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
     images: ["/preview_img.png"],
     creator: "@icrRick",
   },
@@ -170,8 +170,20 @@ export default function RootLayout({
               </Link>
             </div>
 
-            {/* Top Right: Language + Theme Toggle */}
+            {/* Top Right: Language + Theme Toggle + CV Download */}
             <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 hidden md:flex items-center gap-2">
+              <a
+                href="/CV_PhamNguyenTrongTri.pdf"
+                download="CV_PhamNguyenTrongTri.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-8 px-3 rounded-full border border-border/70 hover:border-foreground/80 bg-background/50 hover:bg-foreground hover:text-background text-muted-foreground transition-all duration-200 flex items-center gap-1.5 text-xs font-mono tracking-wider uppercase cursor-pointer"
+                title="Download CV"
+                aria-label="Download CV"
+              >
+                <DownloadIcon className="w-3.5 h-3.5" />
+                <span>CV</span>
+              </a>
               <LanguageToggle />
               <ThemeToggle />
             </div>

@@ -9,23 +9,27 @@ export const translations = {
   },
 
   home: {
-    title: { vi: "Backend Developer", en: "Backend Developer" },
+    title: { vi: "Full-Stack Developer", en: "Full-Stack Developer" },
     titles: [
-      { vi: "Backend Developer",   en: "Backend Developer" },
-      { vi: "Full-Stack Engineer", en: "Full-Stack Engineer" },
+      { vi: "Full-Stack Developer", en: "Full-Stack Developer" },
+      { vi: "Backend Specialist",  en: "Backend Specialist" },
     ],
     aboutTitle: { vi: "Về tôi", en: "About Me" },
     aboutP1: {
-      vi: "Tôi là Backend Developer (với thế mạnh Full-Stack) đến từ Cần Thơ, Việt Nam. Tôi đam mê xây dựng các hệ thống API hiệu năng cao, kiến trúc mở rộng và xử lý các tác vụ bất đồng bộ phức tạp.",
-      en: "I am a Backend Developer (with strong Full-Stack capabilities) based in Can Tho, Viet Nam. I am passionate about building high-performance APIs, scalable architectures, and handling complex asynchronous workflows.",
+      vi: "Tôi là Full-Stack Developer với thế mạnh chuyên sâu về Backend đến từ Cần Thơ, Việt Nam. Tôi tập trung xây dựng sản phẩm web toàn diện từ giao diện tối ưu đến hệ thống API hiệu năng cao, kiến trúc mở rộng và xử lý bất đồng bộ phức tạp.",
+      en: "I am a Full-Stack Developer with deep expertise in Backend systems based in Can Tho, Vietnam. I specialize in building end-to-end web applications, resilient high-throughput APIs, and scalable asynchronous workflows.",
     },
     aboutP2: {
-      vi: "Thế mạnh của tôi xoay quanh NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI và cơ sở dữ liệu (MongoDB, PostgreSQL, MySQL). Tôi luôn theo đuổi Clean Code, tối ưu hóa truy vấn và mang lại trải nghiệm hệ thống mượt mà.",
-      en: "My core expertise centers around NestJS, TypeScript, Redis, BullMQ, Spring Boot, FastAPI, and databases (MongoDB, PostgreSQL, MySQL). I constantly pursue Clean Code, query optimization, and seamless end-to-end system reliability.",
+      vi: "Công nghệ nòng cốt gồm NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI cùng các hệ CSDL (PostgreSQL, MongoDB, MySQL). Tôi luôn chú trọng Clean Code, tối ưu truy vấn và bảo đảm độ ổn định hệ thống.",
+      en: "Core stack includes NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and databases (PostgreSQL, MongoDB, MySQL). Focused on Clean Code, query optimization, and robust system reliability.",
     },
     contact: {
       vi: "Liên hệ công việc qua email",
       en: "For business inquiries, email me at",
+    },
+    downloadCv: {
+      vi: "Tải CV",
+      en: "Download CV",
     },
   },
 
@@ -33,26 +37,26 @@ export const translations = {
     sectionTitle: { vi: "KINH NGHIỆM LÀM VIỆC", en: "WORK EXPERIENCE" },
     role:         { vi: "IT Team Lead", en: "IT Team Lead" },
     company:      { vi: "Viện Khoa Học Và Kỹ Thuật Cần Thơ", en: "Can Tho Institute of Science & Technology" },
-    period:       { vi: "12/2025 – 4/2026", en: "12/2025 – 4/2026" },
+    period:       { vi: "12/2025 - 4/2026", en: "12/2025 - 4/2026" },
     tagline:      {
-      vi: "Dẫn dắt đội ngũ IT 5 thành viên · Phân tích nghiệp vụ BRD/SRS · Thiết kế & Triển khai hệ thống",
-      en: "Led 5-member IT team · BRD & SRS Business Analysis · System Design & Deployment",
+      vi: "Dẫn dắt đội ngũ IT 5 thành viên · Phân tích BRD/SRS · Thiết kế & Triển khai hệ thống",
+      en: "Led 5-member IT team · BRD & SRS Analysis · Architecture & Deployment",
     },
     bullet1: {
-      vi: "Dẫn dắt đội ngũ IT (5 thành viên), phối hợp chặt chẽ với bộ phận Kinh doanh để phân tích và chuẩn hóa yêu cầu hệ thống.",
-      en: "Led a 5-member IT team, collaborating closely with the Business department to analyze and standardize system requirements.",
+      vi: "Dẫn dắt đội ngũ IT 5 thành viên, làm việc chặt chẽ cùng các bên liên quan để chuẩn hóa yêu cầu sản phẩm.",
+      en: "Led a 5-member engineering team, collaborating with stakeholders to translate business needs into technical requirements.",
     },
     bullet2: {
-      vi: "Xây dựng tài liệu nghiệp vụ (BRD) và tài liệu đặc tả hệ thống (SRS) phục vụ phát triển sản phẩm.",
-      en: "Authored Business Requirement Documents (BRD) and System Requirement Specifications (SRS) for product development.",
+      vi: "Soạn thảo tài liệu đặc tả nghiệp vụ (BRD) và kỹ thuật hệ thống (SRS) làm kim chỉ nam phát triển.",
+      en: "Authored comprehensive BRD and SRS specifications ensuring seamless execution across sprints.",
     },
     bullet3: {
-      vi: "Phân chia công việc, theo dõi tiến độ sprint và đảm bảo tính đồng bộ kỹ thuật giữa các thành viên.",
-      en: "Delegated sprint tasks, tracked milestones, and ensured technical alignment across team members.",
+      vi: "Lập kế hoạch sprint, phân bổ nguồn lực và kiểm soát chất lượng kỹ thuật trong toàn đội ngũ.",
+      en: "Planned sprints, delegated tasks, and maintained consistent technical quality standards.",
     },
     bullet4: {
-      vi: "Hỗ trợ định hướng thiết kế kiến trúc hệ thống, luồng xử lý dữ liệu và hỗ trợ triển khai hệ thống trong môi trường development.",
-      en: "Guided system architecture design, data flow modeling, and supported system deployment in development environments.",
+      vi: "Định hình kiến trúc hệ thống, chuẩn hóa luồng luân chuyển dữ liệu và giám sát triển khai trên môi trường phát triển.",
+      en: "Architected system topology, standardized data pipelines, and oversaw dev-environment deployments.",
     },
   },
 
@@ -77,8 +81,8 @@ export const translations = {
         en: "Backend Developer · 6 members · NestJS · TypeScript · Redis · BullMQ · MongoDB · JWT",
       },
       description: {
-        vi: "Hệ sinh thái nhà hàng khách sạn toàn diện. Phát triển RESTful API với NestJS & TypeScript; xây dựng Shared Cronjob & Mail Module với BullMQ + Redis Message Queue xử lý gửi email bất đồng bộ; thiết kế cơ chế xác thực JWT quản lý phiên đa nền tảng (giới hạn 1 web, 1 mobile) và SMS OTP rate-limit; phát triển & tối ưu luồng booking khách sạn; thiết kế hàm sinh 1 tỷ mã đơn hàng/năm không trùng lặp; tối ưu MongoDB indexing (Single, Compound, Partial Index).",
-        en: "Comprehensive hospitality & restaurant ecosystem. Developed standardized RESTful APIs with NestJS + TypeScript; built Shared Cronjob & Mail Module integrating BullMQ + Redis Message Queue for asynchronous email processing; engineered JWT multi-device session management (1 web, 1 mobile) and rate-limited SMS OTP; optimized hotel booking workflows; created unique order code generator scaling to 1 billion/year; and accelerated MongoDB performance via Single, Compound, and Partial Indexing.",
+        vi: "Hệ sinh thái dịch vụ nhà hàng - khách sạn. Xây dựng RESTful API chuẩn hóa với NestJS & TypeScript, tích hợp hàng đợi Redis & BullMQ xử lý email và cronjob bất đồng bộ. Thiết kế xác thực JWT đa thiết bị, chống spam SMS OTP, tối ưu đặt phòng và thuật toán sinh mã đơn hàng không trùng lặp (1 tỷ mã/năm), kèm tối ưu MongoDB Indexing chuyên sâu.",
+        en: "Hospitality & restaurant ecosystem. Built standardized RESTful APIs with NestJS & TypeScript, integrated Redis + BullMQ for async mail queues and cronjobs. Designed multi-device JWT auth, SMS OTP rate-limiting, hotel booking workflows, high-concurrency order code generator (1B/yr), and optimized MongoDB indexing.",
       },
     },
 
@@ -89,8 +93,8 @@ export const translations = {
         en: "Personal Project · Python · FastAPI · SQLAlchemy · Playwright · BeautifulSoup · APScheduler",
       },
       description: {
-        vi: "Hệ thống tự động hóa thu thập và xử lý tin tức từ nhiều nguồn. Xây dựng REST API bằng FastAPI, tích hợp AI phục vụ nhận diện khuôn mặt, xử lý hình ảnh và phân tích dữ liệu. Sử dụng APScheduler để lên lịch thu thập tự động với SQLite/PostgreSQL.",
-        en: "Automated news scraping and processing system from multiple sources. Built REST API with FastAPI, integrated AI for face recognition, image processing and data analysis. Used APScheduler for automatic scheduled crawling with SQLite/PostgreSQL storage.",
+        vi: "Hệ thống tự động hóa thu thập và trích xuất dữ liệu tin tức đa nguồn. Xây dựng backend REST API với FastAPI, tích hợp mô hình AI nhận diện khuôn mặt và xử lý hình ảnh. Vận hành tác vụ crawl tự động định kỳ bằng APScheduler và lưu trữ trên PostgreSQL.",
+        en: "Automated multi-source news aggregation and extraction system. Developed FastAPI backend integrated with AI models for facial recognition and image processing. Scheduled automated crawling via APScheduler with PostgreSQL storage.",
       },
     },
 
@@ -101,8 +105,8 @@ export const translations = {
         en: "Personal Project · Astro · TailwindCSS · i18n",
       },
       description: {
-        vi: "Website đa ngôn ngữ cho sự kiện Mekong HighTech Summit. Thiết kế giao diện responsive tối ưu trên desktop và mobile. Xây dựng các chức năng hiển thị thông tin sự kiện, diễn giả, chương trình và đăng ký tham dự. Tối ưu hiệu năng tải trang và SEO.",
-        en: "Multilingual website for the Mekong HighTech Summit event. Responsive design optimized for desktop and mobile. Built features for event info, speakers, program schedule, and attendee registration. Optimized page load performance and SEO.",
+        vi: "Cổng thông tin đa ngôn ngữ sự kiện công nghệ Mekong HighTech Summit. Xây dựng trên nền tảng Astro & Tailwind CSS, tối ưu giao diện responsive, quản lý lịch trình diễn giả, luồng đăng ký tham dự trực tuyến và đạt điểm SEO/Performance cao.",
+        en: "Multilingual event platform for Mekong HighTech Summit. Built with Astro & Tailwind CSS, featuring responsive design, speaker schedule management, attendee registration, and top-tier SEO/performance scores.",
       },
     },
 
@@ -113,8 +117,8 @@ export const translations = {
         en: "Frontend Developer · Next.js · TailwindCSS · ReactBits · Animata",
       },
       description: {
-        vi: "Trang đích tuyển sinh được tối ưu chuyển đổi với form đăng ký thông minh, thông tin ngành học và các chỉ tiêu tuyển sinh. Thiết kế giao diện hiện đại, responsive và tối ưu SEO.",
-        en: "Conversion-optimized enrollment landing page with smart registration form, program information and enrollment quotas. Modern, responsive design with SEO optimization.",
+        vi: "Trang đích tuyển sinh tối ưu tỷ lệ chuyển đổi với biểu mẫu đăng ký thông minh, tra cứu ngành học và chỉ tiêu. Giao diện hiện đại, tương thích đa thiết bị và chuẩn SEO.",
+        en: "Conversion-focused enrollment landing page with smart registration form, program directory, and quotas. Responsive design with full SEO optimization.",
       },
     },
 
@@ -125,8 +129,8 @@ export const translations = {
         en: "Team Leader · 6 members · Java · Spring Boot · ReactJS · MySQL",
       },
       description: {
-        vi: "Hệ thống e-commerce cho phép mua/bán sách, tích hợp xác minh người bán (eKYC). Xây dựng RESTful APIs quản lý sản phẩm, đơn hàng, người dùng. Thiết kế cơ sở dữ liệu MySQL, xử lý truy vấn thống kê và báo cáo. Xây dựng logic xác thực JWT, đánh giá sản phẩm, quản lý khuyến mãi.",
-        en: "E-commerce system for buying/selling books with seller verification (eKYC). Built RESTful APIs for product, order, and user management. Designed MySQL database with statistical query handling. Implemented JWT auth, product reviews, and promotions.",
+        vi: "Nền tảng thương mại điện tử mua bán sách tích hợp xác minh định danh người bán (eKYC). Phát triển hệ thống backend Java Spring Boot & ReactJS, quản lý danh mục, đơn hàng, bảo mật JWT, xử lý khuyến mãi và tối ưu truy vấn thống kê trên MySQL.",
+        en: "Book e-commerce platform featuring seller eKYC verification. Developed Java Spring Boot backend and ReactJS frontend, handling catalogs, orders, JWT security, promotion logic, and complex analytical MySQL queries.",
       },
     },
   },
