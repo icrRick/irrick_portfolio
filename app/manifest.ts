@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Pham Nguyen Trong Tri - Backend Developer Portfolio",
     short_name: "Trong Tri Backend Portfolio",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

@@ -20,7 +20,7 @@ export function SeoJsonLd() {
         "image": "https://irrick-portfolio.vercel.app/preview_img.png",
         "jobTitle": "Backend Developer (NestJS / FastAPI)",
         "description":
-          "Fresher/Junior Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). TP.HCM (Sẵn sàng nhận việc ngay).",
+          "Fresher Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). TP.HCM (Sẵn sàng nhận việc ngay).",
         "email": "mailto:trongtri.1975s@gmail.com",
         "telephone": "+84899010230",
         "address": {

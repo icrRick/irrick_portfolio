@@ -31,8 +31,7 @@ export default function HomePage() {
             <BlurFade delay={0.1}>
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider w-fit mb-6">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                 </span>
                 <span>{t(tr.home.location, language)}</span>
               </div>
@@ -41,7 +40,7 @@ export default function HomePage() {
             {/* Name */}
             <h1
               aria-label="PHAM NGUYEN TRONG TRI"
-              className="font-heading font-extralight text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] leading-[1.06] tracking-wide uppercase transform scale-x-[1.03] scale-y-[0.97] origin-left w-fit flex flex-col"
+              className="font-heading font-extralight text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] leading-[1.06] tracking-wide uppercase transform scale-x-[1.03] scale-y-[0.97] origin-left w-fit flex flex-col text-balance"
             >
               <AnimatedLetters text="PHAM NGUYEN" />
               <AnimatedLetters text="TRONG TRI" delay={0.45} />
@@ -49,7 +48,8 @@ export default function HomePage() {
 
             {/* Rotating Role Headline */}
             <div className="mt-4 md:mt-6 text-base sm:text-lg md:text-2xl font-light text-primary tracking-wide h-8 flex items-center">
-              <RotatingTypingText texts={roleTitles} />
+              <span className="sr-only">{t(tr.home.role, language)}</span>
+              <RotatingTypingText texts={roleTitles} aria-hidden="true" />
             </div>
 
             {/* CTA & Social Quick Links */}
@@ -102,15 +102,15 @@ export default function HomePage() {
             <SlideUpStagger delay={1.2}>
               <div className="p-6 md:p-8 rounded-xs md:rounded-sm border border-border/80 bg-secondary/15 backdrop-blur-sm shadow-sm flex flex-col gap-5">
                 <div className="flex items-center justify-between pb-3 border-b border-border/50">
-                  <h2 className="text-xs font-mono font-medium tracking-widest uppercase text-primary">
+                  <h2 className="text-xs font-mono font-medium tracking-widest uppercase text-primary text-balance">
                     {t(tr.home.summaryTitle, language)}
                   </h2>
                   <span className="text-[11px] font-mono text-muted-foreground">
-                    Fresher / Junior
+                    Fresher / Entry-level
                   </span>
                 </div>
                 
-                <p className="text-sm md:text-base leading-relaxed text-foreground/90 font-light">
+                <p className="text-sm md:text-base leading-relaxed text-foreground/90 font-light text-pretty">
                   {t(tr.home.summary, language)}
                 </p>
 
@@ -163,10 +163,10 @@ export default function HomePage() {
                   Core Stack First
                 </span>
               </div>
-              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
+              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground text-balance">
                 {t(tr.skills.title, language)}
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl">
+              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl text-pretty">
                 {t(tr.skills.subtitle, language)}
               </p>
               <div className="w-full h-px bg-border/70 mt-6" />
@@ -180,10 +180,10 @@ export default function HomePage() {
               <div className="p-6 md:p-7 rounded-xs md:rounded-sm border border-primary/40 bg-primary/[0.04] hover:border-primary transition-all duration-300 h-full flex flex-col justify-between shadow-sm">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground">
+                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground text-balance">
                       {t(tr.skills.categories.backendCore.title, language)}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium tracking-wider bg-primary/15 text-primary border border-primary/30 uppercase">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium tracking-wider bg-primary/15 text-primary border border-primary/30 uppercase">
                       {tr.skills.categories.backendCore.tag}
                     </span>
                   </div>
@@ -209,10 +209,10 @@ export default function HomePage() {
               <div className="p-6 md:p-7 rounded-xs md:rounded-sm border border-border/70 bg-secondary/15 hover:border-foreground/40 transition-colors h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90">
+                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90 text-balance">
                       {t(tr.skills.categories.languages.title, language)}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
                       {tr.skills.categories.languages.tag}
                     </span>
                   </div>
@@ -238,10 +238,10 @@ export default function HomePage() {
               <div className="p-6 md:p-7 rounded-xs md:rounded-sm border border-border/70 bg-secondary/15 hover:border-foreground/40 transition-colors h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90">
+                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90 text-balance">
                       {t(tr.skills.categories.databases.title, language)}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
                       {tr.skills.categories.databases.tag}
                     </span>
                   </div>
@@ -267,10 +267,10 @@ export default function HomePage() {
               <div className="p-6 md:p-7 rounded-xs md:rounded-sm border border-border/70 bg-secondary/15 hover:border-foreground/40 transition-colors h-full flex flex-col justify-between md:col-span-2 lg:col-span-2">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90">
+                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90 text-balance">
                       {t(tr.skills.categories.queuesTools.title, language)}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
                       {tr.skills.categories.queuesTools.tag}
                     </span>
                   </div>
@@ -296,10 +296,10 @@ export default function HomePage() {
               <div className="p-6 md:p-7 rounded-xs md:rounded-sm border border-border/70 bg-secondary/15 hover:border-foreground/40 transition-colors h-full flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90">
+                    <h3 className="text-sm font-mono font-semibold tracking-wider uppercase text-foreground/90 text-balance">
                       {t(tr.skills.categories.frontend.title, language)}
                     </h3>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
+                    <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono tracking-wider bg-secondary/50 text-muted-foreground border border-border/60">
                       {tr.skills.categories.frontend.tag}
                     </span>
                   </div>
@@ -340,10 +340,10 @@ export default function HomePage() {
                   Chronological
                 </span>
               </div>
-              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
+              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground text-balance">
                 {t(tr.experience.sectionTitle, language)}
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl">
+              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl text-pretty">
                 {t(tr.experience.subtitle, language)}
               </p>
               <div className="w-full h-px bg-border/70 mt-6" />
@@ -359,14 +359,14 @@ export default function HomePage() {
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border/50">
                     <div>
                       <div className="flex flex-wrap items-center gap-3 mb-2">
-                        <h3 className="font-heading text-2xl sm:text-3xl md:text-3xl font-light tracking-wide text-foreground">
+                        <h3 className="font-heading text-2xl sm:text-3xl md:text-3xl font-light tracking-wide text-foreground text-balance">
                           {t(pos.role, language)}
                         </h3>
                         <span className="px-3 py-0.5 rounded-full text-xs font-mono tracking-wider bg-primary/10 text-primary border border-primary/25">
                           {t(pos.badge, language)}
                         </span>
                       </div>
-                      <p className="text-sm md:text-base text-foreground/80 font-light">
+                      <p className="text-sm md:text-base text-foreground/80 font-light text-pretty">
                         {t(pos.company, language)}
                       </p>
                     </div>
@@ -385,7 +385,7 @@ export default function HomePage() {
                         <span className="text-primary font-mono text-xs mt-1 shrink-0">
                           0{bIdx + 1}
                         </span>
-                        <p className="text-xs sm:text-sm md:text-base font-light text-muted-foreground leading-relaxed">
+                        <p className="text-xs sm:text-sm md:text-base font-light text-muted-foreground leading-relaxed text-pretty">
                           {t(bullet, language)}
                         </p>
                       </div>
@@ -397,7 +397,7 @@ export default function HomePage() {
                     {pos.techTags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 rounded-full border border-border/70 bg-background/50 text-xs font-mono text-foreground/75"
+                        className="px-3 py-1 rounded-full border border-border/70 bg-background/50 text-xs font-mono text-foreground/85"
                       >
                         {tag}
                       </span>
@@ -434,10 +434,10 @@ export default function HomePage() {
                   Foundation
                 </span>
               </div>
-              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
+              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground text-balance">
                 {t(tr.education.sectionTitle, language)}
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl">
+              <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl text-pretty">
                 {t(tr.education.subtitle, language)}
               </p>
               <div className="w-full h-px bg-border/70 mt-6" />
@@ -449,14 +449,14 @@ export default function HomePage() {
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-border/50">
                 <div>
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 className="font-heading text-2xl sm:text-3xl font-light tracking-wide text-foreground">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-light tracking-wide text-foreground text-balance">
                       {t(tr.education.school, language)}
                     </h3>
                     <span className="px-3.5 py-1 rounded-full text-xs font-mono font-semibold tracking-wider bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                       ★ {t(tr.education.degreeBadge, language)}
                     </span>
                   </div>
-                  <p className="text-sm md:text-base text-foreground/80 font-light">
+                  <p className="text-sm md:text-base text-foreground/80 font-light text-pretty">
                     {t(tr.education.major, language)}
                   </p>
                 </div>
@@ -477,7 +477,7 @@ export default function HomePage() {
                     <span className="text-primary font-mono text-xs mt-1 shrink-0">
                       0{idx + 1}
                     </span>
-                    <p className="text-xs sm:text-sm md:text-base font-light text-muted-foreground leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-base font-light text-muted-foreground leading-relaxed text-pretty">
                       {t(item, language)}
                     </p>
                   </div>
@@ -504,7 +504,7 @@ export default function HomePage() {
                   Immediate Availability
                 </span>
               </div>
-              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
+              <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground text-balance">
                 {t(tr.contact.sectionTitle, language)}
               </h2>
               <div className="w-full h-px bg-border/70 mt-6" />
@@ -517,13 +517,13 @@ export default function HomePage() {
               {/* Ready Badge & Headline */}
               <div>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-medium tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 mb-4">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                   {t(tr.contact.readyBadge, language)}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-heading font-light tracking-tight text-foreground mb-3">
+                <h3 className="text-2xl sm:text-3xl font-heading font-light tracking-tight text-foreground mb-3 text-balance">
                   {t(tr.contact.heading, language)}
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground font-light max-w-3xl leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground font-light max-w-3xl leading-relaxed text-pretty">
                   {t(tr.contact.subtext, language)}
                 </p>
               </div>
@@ -612,7 +612,7 @@ export default function HomePage() {
               {/* Copyright */}
               <div className="pt-4 border-t border-border/30 text-xs font-mono text-muted-foreground flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <span>{tr.contact.copyright}</span>
-                <span className="text-[11px] text-muted-foreground/70">
+                <span className="text-[11px] text-muted-foreground">
                   Built with Next.js, TypeScript &amp; Tailwind CSS
                 </span>
               </div>

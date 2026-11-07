@@ -91,10 +91,10 @@ export function ProjectShowcase() {
             Institutional &amp; Independent Systems
           </span>
         </div>
-        <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
+        <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground text-balance">
           {t(tr.sectionTitle, language)}
         </h2>
-        <p className="text-sm md:text-base text-muted-foreground font-light max-w-3xl">
+        <p className="text-sm md:text-base text-muted-foreground font-light max-w-3xl text-pretty">
           {t(tr.subtitle, language)}
         </p>
         <div className="w-full h-px bg-border/70 mt-6" />
@@ -129,7 +129,7 @@ export function ProjectShowcase() {
                       </span>
                     </div>
 
-                    <h3 className="font-heading font-normal tracking-tight text-2xl sm:text-3xl md:text-3xl lg:text-4xl mb-4 text-foreground group-hover:text-primary transition-colors">
+                    <h3 className="font-heading font-normal tracking-tight text-2xl sm:text-3xl md:text-3xl lg:text-4xl mb-4 text-foreground group-hover:text-primary transition-colors text-balance">
                       {name}
                     </h3>
 
@@ -138,7 +138,7 @@ export function ProjectShowcase() {
                       {proj.techTags.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-1 rounded-full text-xs font-mono tracking-wide bg-secondary/40 text-foreground/80 border border-border/60"
+                          className="px-2.5 py-1 rounded-full text-xs font-mono tracking-wide bg-secondary/40 text-foreground/85 border border-border/60"
                         >
                           {tech}
                         </span>
@@ -152,7 +152,7 @@ export function ProjectShowcase() {
                           <span className="text-primary font-mono text-xs mt-1 shrink-0">
                             0{idx + 1}
                           </span>
-                          <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed">
+                          <p className="text-xs sm:text-sm text-muted-foreground font-light leading-relaxed text-pretty">
                             {t(bullet, language)}
                           </p>
                         </div>
@@ -170,7 +170,7 @@ export function ProjectShowcase() {
                         className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-mono font-medium tracking-wider uppercase hover:bg-transparent hover:text-foreground transition-all duration-200"
                       >
                         {proj.isLiveSite ? (
-                          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
                         ) : (
                           <GithubIcon className="w-3.5 h-3.5" />
                         )}

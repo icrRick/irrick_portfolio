@@ -17,7 +17,7 @@ export const translations = {
     },
     titles: [
       { vi: "Backend Developer (NestJS / FastAPI)", en: "Backend Developer (NestJS / FastAPI)" },
-      { vi: "Junior Backend Engineer",              en: "Junior Backend Engineer" },
+      { vi: "Fresher Backend Developer",            en: "Fresher Backend Developer" },
     ],
     location: {
       vi: "TP.HCM (Sẵn sàng nhận việc ngay)",
@@ -28,8 +28,8 @@ export const translations = {
       en: "Professional Summary",
     },
     summary: {
-      vi: "Fresher/Junior Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). Có kinh nghiệm thiết kế RESTful API, xử lý bất đồng bộ với Redis / BullMQ và tối ưu truy vấn Database trong môi trường dự án thực tế.",
-      en: "Fresher/Junior Backend Developer with hands-on experience in NestJS (TypeScript) and FastAPI (Python). Experienced in designing RESTful APIs, async job processing with Redis / BullMQ, and database query optimization in real-world projects.",
+      vi: "Fresher Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). Có kinh nghiệm thiết kế RESTful API, xử lý bất đồng bộ với Redis / BullMQ và tối ưu truy vấn Database trong môi trường dự án thực tế.",
+      en: "Fresher Backend Developer with hands-on experience in NestJS (TypeScript) and FastAPI (Python). Experienced in designing RESTful APIs, async job processing with Redis / BullMQ, and database query optimization in real-world projects.",
     },
     metrics: {
       coreStackLabel: { vi: "Core Stack", en: "Core Stack" },
@@ -105,35 +105,27 @@ export const translations = {
           vi: "Dự án Hệ sinh thái Nhà hàng - Khách sạn One Mekong (Team size: 6)",
           en: "One Mekong Hospitality & Restaurant Ecosystem (Team size: 6)",
         },
-        period: { vi: "07/2026 – Hiện tại", en: "07/2026 – Present" },
+        period: { vi: "07/2026 – 09/2026", en: "07/2026 – 09/2026" },
         badge: { vi: "Dự án thực tế", en: "Production Project" },
         techTags: ["NestJS", "TypeScript", "MongoDB", "Redis", "BullMQ", "Rate Limiting"],
         bullets: [
           {
-            vi: "Thiết kế cơ chế sinh mã định danh đơn hàng (Unique Order ID) đảm bảo tính duy nhất và chống xung đột dữ liệu (collision) khi xử lý các request đặt phòng đồng thời.",
-            en: "Designed a high-concurrency Unique Order ID generation mechanism ensuring strict uniqueness and zero data collisions during simultaneous booking requests.",
+            vi: "Đảm nhận phát triển các phân hệ Backend cốt lõi (Quản lý đặt phòng, Đơn hàng, Xác thực đa thiết bị và Thông báo) bằng NestJS (TypeScript) và MongoDB trong đội ngũ 6 thành viên.",
+            en: "Engineered core backend modules (Booking management, Orders, Multi-device Authentication, and Notifications) using NestJS (TypeScript) and MongoDB within a 6-member engineering team.",
           },
           {
-            vi: "Triển khai hàng đợi tin nhắn (BullMQ + Redis) xử lý bất đồng bộ luồng gửi email xác nhận, tách biệt tác vụ nặng khỏi luồng request chính.",
-            en: "Implemented message queues (BullMQ + Redis) for asynchronous email confirmation pipelines, decoupling heavy compute jobs from main HTTP request cycles.",
+            vi: "Giải quyết bài toán xử lý đồng thời (concurrency) khi đặt phòng, thiết kế luồng xử lý bất đồng bộ với Redis / BullMQ và tích hợp bảo mật Rate Limiting cho dịch vụ SMS OTP.",
+            en: "Resolved concurrent booking race conditions, architected asynchronous worker pipelines with Redis / BullMQ, and enforced Rate Limiting on SMS OTP services.",
           },
           {
-            vi: "Xây dựng cơ chế xác thực JWT kết hợp kiểm soát và giới hạn phiên đăng nhập đồng thời trên đa thiết bị (tối đa 1 phiên Web và 1 phiên Mobile).",
-            en: "Architected multi-device JWT authentication with strict concurrent session management (capped at 1 Web session and 1 Mobile session concurrently).",
-          },
-          {
-            vi: "Áp dụng Rate Limiting cho dịch vụ gửi SMS OTP nhằm ngăn chặn spam request và tối ưu chi phí dịch vụ bên thứ ba.",
-            en: "Enforced Rate Limiting policies on SMS OTP verification endpoints to mitigate spam abuse and curb third-party API expense.",
-          },
-          {
-            vi: "Phân tích truy vấn chậm (slow queries) và thiết lập chiến lược đánh Index (Compound & Partial Index) cho MongoDB, giúp giảm thời gian phản hồi cho các API tìm kiếm và lọc phòng trống.",
-            en: "Analyzed slow database queries and executed strategic Compound & Partial Indexing on MongoDB, notably reducing query latency across vacancy search APIs.",
+            vi: "Trực tiếp phân tích truy vấn chậm (slow queries), thiết lập chiến lược đánh Index cho cơ sở dữ liệu và phối hợp tích hợp RESTful API cùng đội ngũ Frontend/Mobile.",
+            en: "Analyzed slow queries, implemented database indexing strategies, and collaborated closely with Frontend/Mobile teams on RESTful API integration.",
           },
         ],
       },
       {
         id: "exp-ctise",
-        role: { vi: "Junior Fullstack Developer", en: "Junior Fullstack Developer" },
+        role: { vi: "Fullstack Developer", en: "Fullstack Developer" },
         company: {
           vi: "Viện Khoa Học Và Kỹ Thuật Cần Thơ (CTISE)",
           en: "Can Tho Institute of Science & Technology (CTISE)",
@@ -173,39 +165,32 @@ export const translations = {
     },
     items: [
       {
-        id: "proj-mekong",
+        id: "proj-onemekong",
         name: {
-          vi: "Mekong HighTech Summit – Cổng thông tin Sự kiện Công nghệ Quốc tế",
-          en: "Mekong HighTech Summit – International Tech Summit Portal",
+          vi: "One Mekong – Hệ sinh thái Đặt phòng Khách sạn & Nhà hàng",
+          en: "One Mekong – Hospitality & Restaurant Booking Ecosystem",
         },
-        period: "01/2026 – 02/2026",
+        period: "07/2026 – 09/2026",
         role: {
-          vi: "Dự án tại Viện CTISE · Fullstack Developer",
-          en: "Institutional Project @ CTISE · Fullstack Developer",
+          vi: "Dự án thực tế (Team 6 người) · Backend Developer",
+          en: "Production Project (Team of 6) · Backend Developer",
         },
-        techTags: [
-          "Astro",
-          "TypeScript",
-          "Tailwind CSS",
-          "Multi-language (i18n)",
-          "Core Web Vitals",
-          "SEO",
-        ],
-        images: ["/images/projects/MekongHighTech/mekong_1.png"],
-        link: "https://mekong-hightech-summit-3.vercel.app/vi/",
-        isLiveSite: true,
+        techTags: ["NestJS", "TypeScript", "MongoDB", "Redis", "BullMQ", "Rate Limiting"],
+        images: ["/images/projects/OneMekong/onemekong_1.svg"],
+        link: "https://github.com/icrRick",
+        isLiveSite: false,
         bullets: [
           {
-            vi: "Dự án trọng điểm thực hiện tại Viện Khoa Học Và Kỹ Thuật Cần Thơ (CTISE), phục vụ quảng bá thông tin và tiếp nhận đăng ký trực tuyến cho sự kiện công nghệ quy mô khu vực.",
-            en: "Key institutional project executed at Can Tho Institute of Science & Technology (CTISE), serving event publicity and online attendee registration.",
+            vi: "Thiết kế cơ chế sinh mã định danh đơn hàng (Unique Order ID) đảm bảo tính duy nhất và chống xung đột dữ liệu (collision) khi xử lý các request đặt phòng đồng thời.",
+            en: "Designed a high-concurrency Unique Order ID generation mechanism ensuring strict uniqueness and zero data collisions during simultaneous booking requests.",
           },
           {
-            vi: "Thiết kế kiến trúc đa ngôn ngữ (Việt - Anh) và tối ưu hóa hiệu năng tĩnh với Astro, đạt điểm số Core Web Vitals và SEO tối đa giúp tăng tốc độ tải trang trên mọi thiết bị.",
-            en: "Architected bilingual (VI/EN) static rendering with Astro, achieving top Core Web Vitals and SEO scores for fast cross-device loading.",
+            vi: "Triển khai Message Queue (BullMQ + Redis) xử lý bất đồng bộ luồng gửi email xác nhận và áp dụng Rate Limiting cho SMS OTP nhằm chống spam, tối ưu chi phí dịch vụ bên thứ ba.",
+            en: "Implemented BullMQ + Redis message queues for async email confirmations and enforced Rate Limiting on SMS OTP endpoints to prevent spam and reduce third-party costs.",
           },
           {
-            vi: "Tham gia từ khâu phân tích nghiệp vụ, chuẩn hóa cấu trúc dữ liệu đến triển khai hoàn thiện hệ thống theo tiêu chuẩn kỹ thuật của Viện.",
-            en: "Involved end-to-end from requirement specification and data structuring to production deployment under institute standards.",
+            vi: "Kiểm soát phiên đăng nhập đa thiết bị bằng JWT (giới hạn đồng thời 1 Web và 1 Mobile) và tối ưu hóa tốc độ tìm kiếm phòng trống trên MongoDB bằng chiến lược Compound & Partial Index.",
+            en: "Engineered multi-device JWT session control (1 Web + 1 Mobile concurrently) and optimized vacancy search latency in MongoDB using Compound & Partial Indexing.",
           },
         ],
       },
@@ -244,6 +229,43 @@ export const translations = {
           {
             vi: "Ứng dụng thư viện nhận diện khuôn mặt (face_recognition / OpenCV) để tự động lọc hình ảnh hợp lệ và chuẩn hóa nội dung bài viết trước khi xuất bản.",
             en: "Applied computer vision libraries (face_recognition / OpenCV) to automatically filter valid facial images and standardize article content before publishing.",
+          },
+        ],
+      },
+      {
+        id: "proj-mekong",
+        name: {
+          vi: "Mekong HighTech Summit – Cổng thông tin Sự kiện Công nghệ Quốc tế",
+          en: "Mekong HighTech Summit – International Tech Summit Portal",
+        },
+        period: "01/2026 – 02/2026",
+        role: {
+          vi: "Dự án tại Viện CTISE · Fullstack Developer",
+          en: "Institutional Project @ CTISE · Fullstack Developer",
+        },
+        techTags: [
+          "Astro",
+          "TypeScript",
+          "Tailwind CSS",
+          "Multi-language (i18n)",
+          "Core Web Vitals",
+          "SEO",
+        ],
+        images: ["/images/projects/MekongHighTech/mekong_1.png"],
+        link: "https://mekong-hightech-summit-3.vercel.app/vi/",
+        isLiveSite: true,
+        bullets: [
+          {
+            vi: "Dự án trọng điểm thực hiện tại Viện Khoa Học Và Kỹ Thuật Cần Thơ (CTISE), phục vụ quảng bá thông tin và tiếp nhận đăng ký trực tuyến cho sự kiện công nghệ quy mô khu vực.",
+            en: "Key institutional project executed at Can Tho Institute of Science & Technology (CTISE), serving event publicity and online attendee registration.",
+          },
+          {
+            vi: "Thiết kế kiến trúc đa ngôn ngữ (Việt - Anh) và tối ưu hóa hiệu năng tĩnh với Astro, đạt điểm số Core Web Vitals và SEO tối đa giúp tăng tốc độ tải trang trên mọi thiết bị.",
+            en: "Architected bilingual (VI/EN) static rendering with Astro, achieving top Core Web Vitals and SEO scores for fast cross-device loading.",
+          },
+          {
+            vi: "Tham gia từ khâu phân tích nghiệp vụ, chuẩn hóa cấu trúc dữ liệu đến triển khai hoàn thiện hệ thống theo tiêu chuẩn kỹ thuật của Viện.",
+            en: "Involved end-to-end from requirement specification and data structuring to production deployment under institute standards.",
           },
         ],
       },
@@ -320,8 +342,8 @@ export const translations = {
       en: "Ready to Join as a Backend Developer",
     },
     subtext: {
-      vi: "Tôi đang tích cực tìm kiếm cơ hội vị trí Fresher / Junior Backend Developer (NestJS, FastAPI, Python, TypeScript) tại TP. Hồ Chí Minh. Rất mong được trao đổi trực tiếp cùng Quý Nhà tuyển dụng.",
-      en: "Actively seeking Fresher / Junior Backend Developer opportunities (NestJS, FastAPI, Python, TypeScript) in Ho Chi Minh City. Looking forward to discussing how I can add immediate value to your engineering team.",
+      vi: "Tôi đang tích cực tìm kiếm cơ hội vị trí Fresher Backend Developer (NestJS, FastAPI, Python, TypeScript) tại TP. Hồ Chí Minh. Rất mong được trao đổi trực tiếp cùng Quý Nhà tuyển dụng.",
+      en: "Actively seeking Fresher Backend Developer opportunities (NestJS, FastAPI, Python, TypeScript) in Ho Chi Minh City. Looking forward to discussing how I can contribute to your engineering team.",
     },
     info: {
       locationLabel: { vi: "Địa điểm làm việc:", en: "Work Location:" },

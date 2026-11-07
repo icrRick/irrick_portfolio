@@ -3,7 +3,7 @@
 import { motion, useInView, Variants } from "framer-motion";
 import { ReactNode, useRef, Children, isValidElement, useState, useEffect } from "react";
 
-// Blur Fade In (similar to Animata's standard fade)
+// Blur Fade In (progressively enhanced, visible at rest for a11y & crawlers)
 export function BlurFade({
   children,
   delay = 0,
@@ -13,15 +13,12 @@ export function BlurFade({
   delay?: number;
   className?: string;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}
@@ -137,12 +134,14 @@ export function RotatingTypingText({
   typingSpeed = 65,
   deletingSpeed = 35,
   pauseDuration = 2200,
+  "aria-hidden": ariaHidden,
 }: {
   texts: string[];
   className?: string;
   typingSpeed?: number;
   deletingSpeed?: number;
   pauseDuration?: number;
+  "aria-hidden"?: boolean | "true" | "false";
 }) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -186,7 +185,7 @@ export function RotatingTypingText({
   const displayedText = currentFullText.substring(0, subIndex);
 
   return (
-    <span className={`inline-flex items-center ${className}`}>
+    <span className={`inline-flex items-center ${className || ""}`} aria-hidden={ariaHidden}>
       <span>{displayedText}</span>
       <span
         className={`inline-block w-[2px] h-[1.1em] bg-primary ml-1 align-middle transition-opacity duration-150 ${
@@ -197,7 +196,7 @@ export function RotatingTypingText({
   );
 }
 
-// Line by Line Slide Up Stagger
+// Line by Line Slide Up Stagger (visible at rest for a11y & crawlers)
 export function SlideUpStagger({
   children,
   className,
@@ -207,19 +206,16 @@ export function SlideUpStagger({
   className?: string;
   delay?: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
   const container: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: delay },
+      transition: { staggerChildren: 0.15, delayChildren: delay },
     },
   };
 
   const child: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 1,
       y: 0,
@@ -233,11 +229,10 @@ export function SlideUpStagger({
 
   return (
     <motion.div
-      ref={ref}
       className={className}
       variants={container}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial="visible"
+      animate="visible"
     >
       {Children.map(children, (childNode) => {
         if (!isValidElement(childNode)) return null;

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Pham Nguyen Trong Tri",
   },
   description:
-    "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, PostgreSQL, MongoDB, and high-performance backend systems.",
+    "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, PostgreSQL, MongoDB, and high-performance backend systems.",
   applicationName: "Pham Nguyen Trong Tri Portfolio",
   authors: [{ name: "Pham Nguyen Trong Tri (irrick)", url: "https://irrick-portfolio.vercel.app" }],
   generator: "Next.js",
@@ -44,7 +44,6 @@ export const metadata: Metadata = {
     "Backend Developer TP.HCM",
     "Lập trình viên Backend TP.HCM",
     "Kỹ sư Backend",
-    "Junior Backend Developer",
     "Fresher Backend Developer",
     "NestJS Developer",
     "FastAPI Python Developer",
@@ -76,7 +75,7 @@ export const metadata: Metadata = {
     url: "https://irrick-portfolio.vercel.app",
     title: "Pham Nguyen Trong Tri | Backend Developer (NestJS / FastAPI)",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     siteName: "Pham Nguyen Trong Tri Portfolio",
     images: [
       {
@@ -91,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pham Nguyen Trong Tri | Backend Developer (NestJS / FastAPI)",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     images: ["/preview_img.png"],
     creator: "@icrRick",
   },
@@ -124,7 +123,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="vi"
       suppressHydrationWarning
       className={`${inter.variable} ${montserrat.variable} antialiased`}
     >
@@ -204,7 +203,7 @@ export default function RootLayout({
             </div>
 
             {/* Bottom Left: Copyright */}
-            <div className="fixed bottom-8 right-8 md:bottom-12 md:right-12 z-50 text-[10px] text-muted-foreground tracking-widest uppercase hidden md:block">
+            <div className="fixed bottom-8 right-8 md:bottom-12 md:right-12 z-50 text-[11px] text-muted-foreground tracking-widest uppercase hidden md:block">
               © Pham Nguyen Trong Tri
             </div>
 

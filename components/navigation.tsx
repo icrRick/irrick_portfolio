@@ -91,7 +91,7 @@ export function Navigation() {
           >
             irrick
           </Link>
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
             Backend Dev
           </span>
         </div>
@@ -230,7 +230,7 @@ export function Navigation() {
                 isActive ? "text-foreground font-medium" : "hover:text-foreground"
               }`}
             >
-              <span className="font-mono text-[10px] text-muted-foreground/60 mr-2 group-hover:text-primary">
+              <span className="font-mono text-[11px] text-muted-foreground mr-2 group-hover:text-primary">
                 {item.number}
               </span>
               <span>{item.label}</span>
