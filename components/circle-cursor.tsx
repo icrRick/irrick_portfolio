@@ -144,8 +144,6 @@ export function CircleCursor() {
         ref={ringRef}
         className="w-8 h-8 border border-white rounded-full transform -translate-x-1/2 -translate-y-1/2 scale-100 bg-transparent transition-transform duration-200 ease-out will-change-transform"
       />
-      {/* Precision reticle dot */}
-      <div className="absolute top-0 left-0 w-1.5 h-1.5 bg-white rounded-full transform -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
     </div>
   );
 }
