@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/icons";
+import { GithubIcon, FacebookIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
@@ -13,7 +13,7 @@ export function Navbar() {
         {/* Minimal Social Links in Navbar (since we removed the other pages) */}
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/icrRick"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -22,16 +22,7 @@ export function Navbar() {
             <GithubIcon className="h-5 w-5" />
           </a>
           <a
-            href="https://linkedin.com/in/your-profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="https://facebook.com/your-profile"
+            href="https://facebook.com/irrickk"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"

@@ -18,16 +18,15 @@ export function SeoJsonLd() {
         "gender": "https://schema.org/Male",
         "url": "https://irrick-portfolio.vercel.app",
         "image": "https://irrick-portfolio.vercel.app/preview_img.png",
-        "jobTitle": "Full-Stack Developer (Backend Focus)",
+        "jobTitle": "Backend Developer (NestJS / FastAPI)",
         "description":
-          "Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+          "Fresher/Junior Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). TP.HCM (Sẵn sàng nhận việc ngay).",
         "email": "mailto:trongtri.1975s@gmail.com",
         "telephone": "+84899010230",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Trần Nam Phú",
-          "addressLocality": "Cần Thơ",
-          "addressRegion": "Cần Thơ",
+          "addressLocality": "TP. Hồ Chí Minh",
+          "addressRegion": "TP. Hồ Chí Minh",
           "addressCountry": "VN"
         },
         "sameAs": [
@@ -37,36 +36,32 @@ export function SeoJsonLd() {
         ],
         "knowsAbout": [
           "NestJS",
+          "FastAPI",
           "TypeScript",
+          "Python",
           "Redis",
           "BullMQ",
-          "FastAPI",
-          "Python",
           "Spring Boot",
           "Java",
-          "MongoDB",
           "PostgreSQL",
+          "MongoDB",
           "MySQL",
           "SQL Server",
-          "SQLite",
-          "System Architecture",
-          "Microservices",
-          "RESTful API",
-          "Message Queue",
-          "Clean Code",
-          "Next.js",
-          "React",
-          "Astro"
+          "APScheduler",
+          "Playwright",
+          "BeautifulSoup",
+          "Docker",
+          "Git"
         ],
         "hasOccupation": {
           "@type": "Occupation",
-          "name": "Full-Stack Developer",
+          "name": "Backend Developer",
           "occupationLocation": {
             "@type": "City",
-            "name": "Can Tho"
+            "name": "Ho Chi Minh City"
           },
           "skills":
-            "NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, System Architecture"
+            "NestJS, TypeScript, FastAPI, Python, Redis, BullMQ, Spring Boot, MongoDB, PostgreSQL, System Architecture"
         }
       },
       {

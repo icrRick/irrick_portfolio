@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Pham Nguyen Trong Tri - Portfolio",
-    short_name: "Trong Tri Portfolio",
+    name: "Pham Nguyen Trong Tri - Backend Developer Portfolio",
+    short_name: "Trong Tri Backend Portfolio",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

@@ -20,17 +20,16 @@ const inter = Inter({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["100", "200", "300", "400"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://irrick-portfolio.vercel.app"),
   title: {
-    default: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
+    default: "Pham Nguyen Trong Tri | Backend Developer (NestJS / FastAPI)",
     template: "%s | Pham Nguyen Trong Tri",
   },
   description:
-    "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, MongoDB, PostgreSQL, and scalable system architecture.",
+    "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, PostgreSQL, MongoDB, and high-performance backend systems.",
   applicationName: "Pham Nguyen Trong Tri Portfolio",
   authors: [{ name: "Pham Nguyen Trong Tri (irrick)", url: "https://irrick-portfolio.vercel.app" }],
   generator: "Next.js",
@@ -42,19 +41,19 @@ export const metadata: Metadata = {
     "Trọng Trí",
     "Trong Tri Pham",
     "Pham Trong Tri",
-    "Backend Developer Can Tho",
-    "Lập trình viên Backend Cần Thơ",
-    "Kỹ sư phần mềm Cần Thơ",
-    "Backend Developer Vietnam",
-    "Full-Stack Developer Vietnam",
+    "Backend Developer TP.HCM",
+    "Lập trình viên Backend TP.HCM",
+    "Kỹ sư Backend",
+    "Junior Backend Developer",
+    "Fresher Backend Developer",
     "NestJS Developer",
-    "Spring Boot Developer",
     "FastAPI Python Developer",
+    "Spring Boot Developer",
     "Redis BullMQ Message Queue",
+    "Database Optimization",
     "System Architecture",
     "Portfolio Developer",
     "Software Engineer Portfolio",
-    "Can Tho Developer",
   ],
   creator: "Pham Nguyen Trong Tri",
   publisher: "Pham Nguyen Trong Tri",
@@ -75,24 +74,24 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     alternateLocale: ["en_US"],
     url: "https://irrick-portfolio.vercel.app",
-    title: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
+    title: "Pham Nguyen Trong Tri | Backend Developer (NestJS / FastAPI)",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     siteName: "Pham Nguyen Trong Tri Portfolio",
     images: [
       {
         url: "/preview_img.png",
         width: 1200,
         height: 630,
-        alt: "Pham Nguyen Trong Tri (irrick) - Portfolio",
+        alt: "Pham Nguyen Trong Tri (irrick) - Backend Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
+    title: "Pham Nguyen Trong Tri | Backend Developer (NestJS / FastAPI)",
     description:
-      "Portfolio of Pham Nguyen Trong Tri (irrick). Full-Stack Developer with strong Backend expertise based in Can Tho, Vietnam. Specializing in NestJS, TypeScript, Next.js, Redis, BullMQ, Spring Boot, FastAPI, and scalable system architectures.",
+      "Portfolio of Pham Nguyen Trong Tri (irrick). Fresher/Junior Backend Developer based in TP.HCM (Sẵn sàng nhận việc ngay). Specializing in NestJS, FastAPI, Python, TypeScript, Redis, BullMQ, and scalable backend architectures.",
     images: ["/preview_img.png"],
     creator: "@icrRick",
   },
@@ -174,7 +173,7 @@ export default function RootLayout({
             <div className="fixed top-6 right-3 md:top-12 md:left-auto md:right-12 z-50 hidden md:flex items-center gap-2">
               <a
                 href="/CV_PhamNguyenTrongTri.pdf"
-                download="CV_PhamNguyenTrongTri.pdf"
+                download="CV_PhamNguyenTrongTri_BackendDeveloper.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-8 px-3 rounded-full border border-border/70 hover:border-foreground/80 bg-background/50 hover:bg-foreground hover:text-background text-muted-foreground transition-all duration-200 flex items-center gap-1.5 text-xs font-mono tracking-wider uppercase cursor-pointer"

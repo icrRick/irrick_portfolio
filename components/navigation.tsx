@@ -16,13 +16,15 @@ export function Navigation() {
 
   const navItems = [
     { id: "home",       number: "01", label: t(translations.nav.home,       language) },
-    { id: "experience", number: "02", label: t(translations.nav.experience, language) },
-    { id: "skill",      number: "03", label: t(translations.nav.skill,      language) },
-    { id: "project",    number: "04", label: t(translations.nav.project,    language) },
+    { id: "skills",     number: "02", label: t(translations.nav.skills,     language) },
+    { id: "experience", number: "03", label: t(translations.nav.experience, language) },
+    { id: "projects",   number: "04", label: t(translations.nav.projects,   language) },
+    { id: "education",  number: "05", label: t(translations.nav.education,  language) },
+    { id: "contact",    number: "06", label: t(translations.nav.contact,    language) },
   ];
 
   useEffect(() => {
-    const sectionIds = ["home", "experience", "skill", "project"];
+    const sectionIds = ["home", "skills", "experience", "projects", "education", "contact"];
     const scrollContainer = document.querySelector("main");
 
     const observer = new IntersectionObserver(
@@ -77,17 +79,22 @@ export function Navigation() {
   return (
     <>
       {/* ============================================================ */}
-      {/* MOBILE TOP HEADER (Fixed clean bar on mobile screens)        */}
+      {/* MOBILE TOP HEADER                                            */}
       {/* ============================================================ */}
-      <header className="md:hidden fixed top-0 left-0 right-0 z-50 h-16 px-4 sm:px-6 flex items-center justify-between bg-background/85 backdrop-blur-md border-b border-border/40">
-        {/* Brand Logo */}
-        <Link
-          href="/"
-          onClick={(e) => handleClick(e, "home")}
-          className="text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity"
-        >
-          irrick
-        </Link>
+      <header className="md:hidden fixed top-0 left-0 right-0 z-50 h-16 px-4 sm:px-6 flex items-center justify-between bg-background/90 backdrop-blur-md border-b border-border/50">
+        {/* Brand Logo & Role Pill */}
+        <div className="flex items-center gap-2.5">
+          <Link
+            href="/"
+            onClick={(e) => handleClick(e, "home")}
+            className="text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity"
+          >
+            irrick
+          </Link>
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+            Backend Dev
+          </span>
+        </div>
 
         {/* Action Controls: Language + Theme + Hamburger */}
         <div className="flex items-center gap-2 sm:gap-2.5">
@@ -98,7 +105,7 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label={isOpen ? "Close Menu" : "Open Menu"}
-            className="w-8 h-8 rounded-full border border-border/60 bg-background/50 flex flex-col items-center justify-center gap-1 hover:border-foreground/40 transition-colors cursor-pointer"
+            className="w-8 h-8 rounded-full border border-border/70 bg-background/60 flex flex-col items-center justify-center gap-1 hover:border-foreground/40 transition-colors cursor-pointer"
           >
             <span
               className={`w-3.5 h-[1.5px] bg-foreground transition-all duration-300 ${
@@ -132,7 +139,7 @@ export function Navigation() {
             className="md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-xl flex flex-col justify-between p-6 sm:p-8 border-b border-border/40 overflow-y-auto"
           >
             {/* Nav Links */}
-            <div className="flex flex-col gap-4 pt-2">
+            <div className="flex flex-col gap-2.5 pt-2">
               {navItems.map((item, idx) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -142,17 +149,17 @@ export function Navigation() {
                     onClick={(e) => handleClick(e, item.id)}
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.05 + 0.03 }}
-                    className={`flex items-center justify-between py-3 border-b border-border/30 transition-colors ${
+                    transition={{ delay: idx * 0.04 + 0.02 }}
+                    className={`flex items-center justify-between py-2.5 border-b border-border/30 transition-colors ${
                       isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <div className="flex items-baseline gap-3">
                       <span className="font-mono text-xs text-primary">{item.number}</span>
-                      <span className="text-lg font-light tracking-wider uppercase">{item.label}</span>
+                      <span className="text-base font-light tracking-wider uppercase">{item.label}</span>
                     </div>
                     {isActive && (
-                      <span className="w-2 h-2 rounded-full bg-primary" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     )}
                   </motion.a>
                 );
@@ -166,15 +173,15 @@ export function Navigation() {
                 download="CV_PhamNguyenTrongTri.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-medium tracking-widest uppercase hover:bg-transparent hover:text-foreground transition-all duration-200"
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-mono font-medium tracking-widest uppercase hover:bg-transparent hover:text-foreground transition-all duration-200"
               >
                 <DownloadIcon className="w-3.5 h-3.5" />
                 <span>{t(translations.home.downloadCv, language)}</span>
               </a>
 
               <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground font-light">Pham Nguyen Trong Tri</span>
-                <div className="flex items-center gap-3">
+                <span className="text-xs text-muted-foreground font-light">TP.HCM · Sẵn sàng nhận việc</span>
+                <div className="flex items-center gap-2.5">
                   <a
                     href="https://github.com/icrRick"
                     target="_blank"
@@ -210,7 +217,7 @@ export function Navigation() {
       {/* ============================================================ */}
       {/* DESKTOP VERTICAL NAVIGATION (Left side on desktop)          */}
       {/* ============================================================ */}
-      <nav className="hidden md:flex fixed left-12 top-1/2 -translate-y-1/2 z-50 flex-col gap-6 text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto">
+      <nav className="hidden md:flex fixed left-10 lg:left-12 top-1/2 -translate-y-1/2 z-50 flex-col gap-5 text-xs font-semibold tracking-widest text-muted-foreground uppercase pointer-events-auto">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
 
@@ -219,17 +226,20 @@ export function Navigation() {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleClick(e, item.id)}
-              className={`transition-colors relative group w-fit ${
-                isActive ? "text-foreground" : "hover:text-foreground"
+              className={`transition-colors relative group w-fit py-0.5 ${
+                isActive ? "text-foreground font-medium" : "hover:text-foreground"
               }`}
             >
-              {item.label}
+              <span className="font-mono text-[10px] text-muted-foreground/60 mr-2 group-hover:text-primary">
+                {item.number}
+              </span>
+              <span>{item.label}</span>
               {/* Animated Underline */}
               <span
-                className={`absolute -bottom-1 left-0 w-full h-px bg-foreground origin-left transition-transform duration-300 ease-out ${
+                className={`absolute -bottom-0.5 left-0 w-full h-[1.5px] bg-foreground origin-left transition-transform duration-300 ease-out ${
                   isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                 }`}
-              ></span>
+              />
             </a>
           );
         })}
