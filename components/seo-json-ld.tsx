@@ -71,7 +71,7 @@ export function SeoJsonLd() {
         "name": "Pham Nguyen Trong Tri Portfolio",
         "alternateName": "irrick Portfolio",
         "description":
-          "Official Portfolio of Pham Nguyen Trong Tri (irrick) - Full-Stack Developer",
+          "Official Portfolio of Pham Nguyen Trong Tri (irrick) - Backend Developer (NestJS / FastAPI)",
         "publisher": {
           "@id": "https://irrick-portfolio.vercel.app/#person"
         },
@@ -81,7 +81,7 @@ export function SeoJsonLd() {
         "@type": "ProfilePage",
         "@id": "https://irrick-portfolio.vercel.app/#profilepage",
         "url": "https://irrick-portfolio.vercel.app",
-        "name": "Pham Nguyen Trong Tri (irrick) | Full-Stack Developer",
+        "name": "Pham Nguyen Trong Tri (irrick) | Backend Developer (NestJS / FastAPI)",
         "isPartOf": {
           "@id": "https://irrick-portfolio.vercel.app/#website"
         },

@@ -28,8 +28,19 @@ export const translations = {
       en: "Professional Summary",
     },
     summary: {
-      vi: "Fresher/Junior Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). Có kinh nghiệm xây dựng RESTful API, xử lý tác vụ bất đồng bộ với Redis / BullMQ và tối ưu hóa truy vấn cơ sở dữ liệu trong môi trường dự án thực tế. Hướng tới phát triển các hệ thống Backend chịu tải tốt, cấu trúc sạch và giàu tính nghiệp vụ.",
-      en: "Fresher/Junior Backend Developer with hands-on experience in NestJS (TypeScript) and FastAPI (Python). Proven experience in building RESTful APIs, handling asynchronous tasks with Redis / BullMQ, and optimizing database queries in production environments. Aiming to build resilient, clean-architecture, and high-throughput backend systems.",
+      vi: "Fresher/Junior Backend Developer với nền tảng thực chiến về NestJS (TypeScript) và FastAPI (Python). Có kinh nghiệm thiết kế RESTful API, xử lý bất đồng bộ với Redis / BullMQ và tối ưu truy vấn Database trong môi trường dự án thực tế.",
+      en: "Fresher/Junior Backend Developer with hands-on experience in NestJS (TypeScript) and FastAPI (Python). Experienced in designing RESTful APIs, async job processing with Redis / BullMQ, and database query optimization in real-world projects.",
+    },
+    metrics: {
+      coreStackLabel: { vi: "Core Stack", en: "Core Stack" },
+      coreStackVal: "NestJS (TS) · FastAPI (Python) · Spring Boot",
+      dbQueueLabel: { vi: "Database & Queue", en: "Database & Queue" },
+      dbQueueVal: "PostgreSQL · MongoDB · Redis · BullMQ",
+      educationLabel: { vi: "Học vấn", en: "Education" },
+      educationVal: {
+        vi: "GPA 3.51/4.0 (Loại Giỏi) – FPT Polytechnic",
+        en: "GPA 3.51/4.0 (Distinction) – FPT Polytechnic",
+      },
     },
     contactQuick: {
       vi: "Liên hệ nhanh",
@@ -96,7 +107,7 @@ export const translations = {
         },
         period: { vi: "07/2026 – Hiện tại", en: "07/2026 – Present" },
         badge: { vi: "Dự án thực tế", en: "Production Project" },
-        techTags: ["NestJS", "TypeScript", "MongoDB", "Redis", "BullMQ", "JWT"],
+        techTags: ["NestJS", "TypeScript", "MongoDB", "Redis", "BullMQ", "Rate Limiting"],
         bullets: [
           {
             vi: "Thiết kế cơ chế sinh mã định danh đơn hàng (Unique Order ID) đảm bảo tính duy nhất và chống xung đột dữ liệu (collision) khi xử lý các request đặt phòng đồng thời.",
@@ -129,7 +140,7 @@ export const translations = {
         },
         period: { vi: "12/2025 – 04/2026", en: "12/2025 – 04/2026" },
         badge: { vi: "Viện Nghiên cứu", en: "Institute" },
-        techTags: ["Astro", "Tailwind CSS", "Database Design", "SRS"],
+        techTags: ["TypeScript", "Astro", "Tailwind CSS", "Database Design", "System Analysis (SRS)"],
         bullets: [
           {
             vi: "Tham gia phân tích yêu cầu nghiệp vụ, viết tài liệu đặc tả kỹ thuật (SRS) và thiết kế cấu trúc cơ sở dữ liệu cho các hệ thống nội bộ của Viện.",
@@ -149,13 +160,55 @@ export const translations = {
   },
 
   projects: {
-    sectionTitle: { vi: "DỰ ÁN CÁ NHÂN", en: "PERSONAL PROJECTS" },
+    sectionTitle: { vi: "DỰ ÁN TIÊU BIỂU", en: "FEATURED PROJECTS" },
     subtitle: {
-      vi: "Các dự án xây dựng độc lập làm nổi bật kỹ năng Backend, Automation và thiết kế cơ sở dữ liệu",
-      en: "Independent projects highlighting Backend engineering, automated scraping pipelines, and database optimization",
+      vi: "Các hệ thống và sản phẩm thực tế đã tham gia phát triển tại đơn vị và cá nhân",
+      en: "Selected institutional and independent projects showcasing Backend, Fullstack, and Automation engineering",
     },
     viewProject:  { vi: "Xem Source Code", en: "View Source Code" },
+    viewLive:     { vi: "Xem Website Trực Tuyến", en: "Live Demo" },
+    institutionalBadge: {
+      vi: "Dự án tại Viện CTISE",
+      en: "Institutional Project @ CTISE",
+    },
     items: [
+      {
+        id: "proj-mekong",
+        name: {
+          vi: "Mekong HighTech Summit – Cổng thông tin Sự kiện Công nghệ Quốc tế",
+          en: "Mekong HighTech Summit – International Tech Summit Portal",
+        },
+        period: "01/2026 – 02/2026",
+        role: {
+          vi: "Dự án tại Viện CTISE · Fullstack Developer",
+          en: "Institutional Project @ CTISE · Fullstack Developer",
+        },
+        techTags: [
+          "Astro",
+          "TypeScript",
+          "Tailwind CSS",
+          "Multi-language (i18n)",
+          "Core Web Vitals",
+          "SEO",
+        ],
+        images: ["/images/projects/MekongHighTech/mekong_1.png"],
+        link: "https://mekong-hightech-summit-3.vercel.app/vi/",
+        isLiveSite: true,
+        bullets: [
+          {
+            vi: "Dự án trọng điểm thực hiện tại Viện Khoa Học Và Kỹ Thuật Cần Thơ (CTISE), phục vụ quảng bá thông tin và tiếp nhận đăng ký trực tuyến cho sự kiện công nghệ quy mô khu vực.",
+            en: "Key institutional project executed at Can Tho Institute of Science & Technology (CTISE), serving event publicity and online attendee registration.",
+          },
+          {
+            vi: "Thiết kế kiến trúc đa ngôn ngữ (Việt - Anh) và tối ưu hóa hiệu năng tĩnh với Astro, đạt điểm số Core Web Vitals và SEO tối đa giúp tăng tốc độ tải trang trên mọi thiết bị.",
+            en: "Architected bilingual (VI/EN) static rendering with Astro, achieving top Core Web Vitals and SEO scores for fast cross-device loading.",
+          },
+          {
+            vi: "Tham gia từ khâu phân tích nghiệp vụ, chuẩn hóa cấu trúc dữ liệu đến triển khai hoàn thiện hệ thống theo tiêu chuẩn kỹ thuật của Viện.",
+            en: "Involved end-to-end from requirement specification and data structuring to production deployment under institute standards.",
+          },
+        ],
+      },
       {
         id: "proj-spidernews",
         name: {
@@ -174,10 +227,11 @@ export const translations = {
           "Playwright",
           "BeautifulSoup",
           "APScheduler",
-          "Face Recognition (AI)",
+          "OpenCV / face_recognition",
         ],
         images: ["/images/projects/SpiderNews/sn_1.png"],
         link: "https://github.com/icrRick/SpiderNews_Demo",
+        isLiveSite: false,
         bullets: [
           {
             vi: "Xây dựng hệ thống Backend với FastAPI (Python) và SQLAlchemy phục vụ quản lý và lưu trữ luồng dữ liệu tin tức tự động.",
@@ -188,8 +242,8 @@ export const translations = {
             en: "Developed automated web scrapers using Playwright and BeautifulSoup, paired with APScheduler for non-blocking periodic background cron execution.",
           },
           {
-            vi: "Tích hợp mô hình AI nhận diện khuôn mặt (Face Recognition) để tự động lọc hình ảnh và chuẩn hóa nội dung bài viết trước khi xuất bản.",
-            en: "Integrated Face Recognition AI pipelines to identify and filter relevant facial images while standardizing article contents prior to publishing.",
+            vi: "Ứng dụng thư viện nhận diện khuôn mặt (face_recognition / OpenCV) để tự động lọc hình ảnh hợp lệ và chuẩn hóa nội dung bài viết trước khi xuất bản.",
+            en: "Applied computer vision libraries (face_recognition / OpenCV) to automatically filter valid facial images and standardize article content before publishing.",
           },
         ],
       },
@@ -204,13 +258,14 @@ export const translations = {
           vi: "Personal / Team Project · Backend Core",
           en: "Personal / Team Project · Backend Core",
         },
-        techTags: ["Java", "Spring Boot", "ReactJS", "MySQL", "JWT"],
+        techTags: ["Java", "Spring Boot", "Spring Security", "MySQL", "ReactJS"],
         images: ["/images/projects/E_Books/book1.png"],
         link: "https://github.com/icrRick/theBugs_book_ecommerce",
+        isLiveSite: false,
         bullets: [
           {
-            vi: "Xây dựng hệ thống Backend RESTful API với Java Spring Boot, tích hợp xác thực phân quyền JWT và luồng nghiệp vụ xác minh định danh người bán (eKYC).",
-            en: "Built modular RESTful backend services using Java Spring Boot, integrating JWT role-based security and seller identity verification (eKYC) workflows.",
+            vi: "Xây dựng hệ thống Backend RESTful API với Java Spring Boot, tích hợp xác thực phân quyền Spring Security và luồng nghiệp vụ xác minh định danh người bán (eKYC).",
+            en: "Built modular RESTful backend services using Java Spring Boot, integrating Spring Security role-based authorization and seller identity verification (eKYC) workflows.",
           },
           {
             vi: "Thiết kế mô hình cơ sở dữ liệu và tối ưu hóa các câu truy vấn phức tạp trên MySQL phục vụ quản lý danh mục sách, giỏ hàng, đơn hàng và báo cáo thống kê doanh thu.",
@@ -244,16 +299,12 @@ export const translations = {
     },
     details: [
       {
-        vi: "Tốt nghiệp loại Giỏi chuyên ngành Kỹ thuật phần mềm với GPA tích lũy 3.51/4.0.",
-        en: "Graduated with Distinction in Software Engineering with a cumulative GPA of 3.51/4.0.",
+        vi: "Điểm trung bình tích lũy (GPA): 3.51/4.0 (8.5/10) – Thuộc nhóm sinh viên tốt nghiệp loại Giỏi chuyên ngành Kỹ thuật phần mềm.",
+        en: "Cumulative GPA: 3.51/4.0 (8.5/10) – Graduated with Distinction in Software Engineering.",
       },
       {
-        vi: "Nắm vững nguyên lý Cấu trúc dữ liệu & Giải thuật, Phân tích thiết kế hệ thống, Lập trình hướng đối tượng (OOP) và Quản trị cơ sở dữ liệu quan hệ/phi quan hệ.",
-        en: "Solid grasp of Data Structures & Algorithms, System Analysis & Design, Object-Oriented Programming (OOP), and Relational/NoSQL Database Management.",
-      },
-      {
-        vi: "Rèn luyện tư duy Clean Architecture, viết mã nguồn có tài liệu rõ ràng, chuẩn phong cách phát triển phần mềm doanh nghiệp.",
-        en: "Cultivated Clean Architecture mindset, standardized documentation, and production-grade software development practices.",
+        vi: "Trọng tâm đào tạo & đồ án: Phát triển hệ thống Backend (Java/Spring Boot, Node.js), Thiết kế Cơ sở dữ liệu quan hệ & NoSQL, Phân tích thiết kế hệ thống (SRS/UML) và Kiểm thử phần mềm.",
+        en: "Core coursework & capstone focus: Backend Engineering, Relational & NoSQL Database Design, System Analysis & Specification (SRS/UML), and Software Testing.",
       },
     ],
   },

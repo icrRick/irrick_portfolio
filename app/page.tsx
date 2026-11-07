@@ -97,10 +97,10 @@ export default function HomePage() {
             </BlurFade>
           </div>
 
-          {/* Right Side: Professional Summary Card (Funnel scan in 5 seconds) */}
-          <div className="w-full lg:w-[420px] xl:w-[460px] shrink-0 mt-6 lg:mt-16">
+          {/* Right Side: Professional Summary Card (Funnel scan in 3-5 seconds) */}
+          <div className="w-full lg:w-[440px] xl:w-[480px] shrink-0 mt-6 lg:mt-16">
             <SlideUpStagger delay={1.2}>
-              <div className="p-6 md:p-8 rounded-xs md:rounded-sm border border-border/80 bg-secondary/15 backdrop-blur-sm shadow-sm flex flex-col gap-4">
+              <div className="p-6 md:p-8 rounded-xs md:rounded-sm border border-border/80 bg-secondary/15 backdrop-blur-sm shadow-sm flex flex-col gap-5">
                 <div className="flex items-center justify-between pb-3 border-b border-border/50">
                   <h2 className="text-xs font-mono font-medium tracking-widest uppercase text-primary">
                     {t(tr.home.summaryTitle, language)}
@@ -114,15 +114,32 @@ export default function HomePage() {
                   {t(tr.home.summary, language)}
                 </p>
 
-                <div className="pt-2 flex flex-wrap gap-1.5">
-                  {["NestJS", "FastAPI", "Redis", "BullMQ", "PostgreSQL", "MongoDB"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-background/60 border border-border/70 text-foreground/75"
-                    >
-                      {tag}
+                {/* 3 Quick Scan Metrics / Highlights */}
+                <div className="pt-3 border-t border-border/40 flex flex-col gap-2.5 font-mono text-xs">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1.5 border-b border-border/20">
+                    <span className="text-muted-foreground uppercase text-[11px]">
+                      {t(tr.home.metrics.coreStackLabel, language)}:
                     </span>
-                  ))}
+                    <span className="text-foreground font-medium sm:text-right">
+                      {tr.home.metrics.coreStackVal}
+                    </span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-1.5 border-b border-border/20">
+                    <span className="text-muted-foreground uppercase text-[11px]">
+                      {t(tr.home.metrics.dbQueueLabel, language)}:
+                    </span>
+                    <span className="text-foreground font-medium sm:text-right">
+                      {tr.home.metrics.dbQueueVal}
+                    </span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <span className="text-muted-foreground uppercase text-[11px]">
+                      {t(tr.home.metrics.educationLabel, language)}:
+                    </span>
+                    <span className="text-emerald-400 font-medium sm:text-right">
+                      {t(tr.home.metrics.educationVal, language)}
+                    </span>
+                  </div>
                 </div>
               </div>
             </SlideUpStagger>

@@ -88,7 +88,7 @@ export function ProjectShowcase() {
           </span>
           <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
           <span className="text-xs font-mono tracking-wider text-muted-foreground">
-            Backend &amp; Automation
+            Institutional &amp; Independent Systems
           </span>
         </div>
         <h2 className="font-heading font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] leading-[1.1] tracking-tight uppercase mb-4 text-foreground">
@@ -169,13 +169,17 @@ export function ProjectShowcase() {
                         rel="noopener noreferrer"
                         className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-foreground bg-foreground text-background text-xs font-mono font-medium tracking-wider uppercase hover:bg-transparent hover:text-foreground transition-all duration-200"
                       >
-                        <GithubIcon className="w-3.5 h-3.5" />
-                        <span>{t(tr.viewProject, language)}</span>
+                        {proj.isLiveSite ? (
+                          <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        ) : (
+                          <GithubIcon className="w-3.5 h-3.5" />
+                        )}
+                        <span>{proj.isLiveSite ? t(tr.viewLive, language) : t(tr.viewProject, language)}</span>
                         <span className="transition-transform group-hover/btn:translate-x-0.5">↗</span>
                       </a>
                     ) : (
-                      <span className="text-xs font-mono text-muted-foreground">
-                        Private Repository
+                      <span className="text-xs font-mono px-3.5 py-1.5 rounded-full border border-border/70 bg-secondary/30 text-muted-foreground">
+                        {t(tr.institutionalBadge, language)}
                       </span>
                     )}
                   </div>
